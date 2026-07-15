@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<!-- ════════════════════════════════════════════════════════════════
+   RichLife · דף מכר לקורס הדיגיטלי "להשקיע לראשונה בקלות" · על landing-studio kit
+   מותג: ירוק RichLife (אורן/מרווה) · מחיר: 97 ₪ · CTA: טופס בדף (שם/מייל/טלפון)
+   קול: לשון נקבה (כמו הדף המקורי, קהל נשים). בלי מקפים ארוכים.
+   ⚠️ הטופס דורש חיבור לרב מסר / Grow (action = placeholder). לינקים לתקנון = placeholder.
+═════════════════════════════════════════════════════════════════ -->
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0E1512">
+<title>להשקיע לראשונה בקלות · קורס דיגיטלי · RichLife</title>
+<meta name="description" content="קורס דיגיטלי קצר ופשוט של טלי בנימינוב (RichLife) שמראה לך צעד אחר צעד איך לעשות את ההשקעה הראשונה שלך, בלי להסתבך ובלי לפחד. 97 ₪, גישה מיידית.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ===== טוקנים - נצבעים ע"י apply_brand.py ===== */
+:root {
+  --brand-font: 'Heebo', system-ui, sans-serif;
+  --accent-rgb: 95,138,111; --accent2-rgb: 159,198,169; --orange2-rgb: 95,138,111;
+ --orange: #5F8A6F; --orange-2: #5F8A6F; --amber: #9FC6A9;
+ --bg: #0E1512; --text: #E4E4F0; --muted: #72728C; --white: #FFFFFF;
+ --border: rgba(255,255,255,0.065);
+ --light-bg: #EEF3EF; --light-bg-2: #ECEAE4; --light-text: #1E2B25; --light-muted: #5C5C78;
+ --light-border: rgba(13,13,20,0.08);
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--brand-font), system-ui, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+#scroll-progress { position: fixed; top: 0; left: 0; z-index: 999; height: 3px; width: 0%; background: linear-gradient(90deg, var(--orange), var(--amber)); transition: width .05s linear; pointer-events: none; }
+
+/* ===== SCENE ===== */
+.scene { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.orb-a { position: absolute; top: 40%; left: 50%; transform: translate(-50%,-50%); width: 1000px; height: 1000px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(var(--accent-rgb),.24) 0%, rgba(var(--orange2-rgb),.10) 28%, rgba(var(--accent-rgb),.03) 55%, transparent 70%); filter: blur(45px); animation: orb-a 8s ease-in-out infinite; }
+.orb-b { position: absolute; top: 44%; left: 50%; transform: translate(-50%,-50%); width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(var(--accent2-rgb),.18) 0%, rgba(var(--accent-rgb),.08) 45%, transparent 70%); filter: blur(28px); animation: orb-b 5s ease-in-out infinite; }
+@keyframes orb-a { 0%,100%{opacity:.8;transform:translate(-50%,-50%) scale(1)} 50%{opacity:1;transform:translate(-50%,-50%) scale(1.07)} }
+@keyframes orb-b { 0%,100%{opacity:.75;transform:translate(-50%,-50%) scale(1)} 50%{opacity:1;transform:translate(-50%,-50%) scale(1.12)} }
+.ring { position: absolute; top: 40%; left: 50%; border-radius: 50%; }
+.ring-1 { width: 580px; height: 580px; transform: translate(-50%,-50%); border: 1px solid rgba(var(--accent-rgb),.09); animation: spin-fwd 24s linear infinite; }
+.ring-1::after { content: ''; position: absolute; top: -2px; left: 50%; width: 5px; height: 5px; border-radius: 50%; background: var(--orange); transform: translateX(-50%); box-shadow: 0 0 14px 5px var(--orange); }
+.ring-2 { width: 760px; height: 760px; transform: translate(-50%,-50%); border: 1px solid rgba(var(--accent-rgb),.05); animation: spin-rev 42s linear infinite; }
+.ring-2::after { content: ''; position: absolute; bottom: -2px; right: 0; width: 3px; height: 3px; border-radius: 50%; background: rgba(var(--orange2-rgb),.8); box-shadow: 0 0 8px 3px rgba(var(--orange2-rgb),.6); }
+.ring-3 { width: 950px; height: 950px; transform: translate(-50%,-50%); border: 1px solid rgba(var(--accent-rgb),.025); }
+@keyframes spin-fwd { from{transform:translate(-50%,-50%) rotate(0deg)} to{transform:translate(-50%,-50%) rotate(360deg)} }
+@keyframes spin-rev { from{transform:translate(-50%,-50%) rotate(0deg)} to{transform:translate(-50%,-50%) rotate(-360deg)} }
+.scene-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(var(--accent-rgb),.022) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--accent-rgb),.022) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse 72% 60% at 50% 40%, black 0%, transparent 100%); }
+.a-right { position: absolute; top: -15%; right: -22%; width: 850px; height: 850px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(var(--accent-rgb),.20) 0%, rgba(var(--accent-rgb),.07) 38%, transparent 68%); filter: blur(65px); animation: fl-r 11s ease-in-out infinite; }
+.a-left { position: absolute; top: 18%; left: -20%; width: 820px; height: 820px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(var(--accent2-rgb),.16) 0%, rgba(var(--accent-rgb),.08) 40%, transparent 72%); filter: blur(70px); animation: fl-l 15s ease-in-out infinite; }
+.a-btm { position: absolute; bottom: -8%; left: 15%; width: 680px; height: 680px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(var(--accent-rgb),.09) 0%, rgba(var(--orange2-rgb),.04) 50%, transparent 70%); filter: blur(58px); animation: fl-b 19s ease-in-out infinite; }
+.a-top-left { position: absolute; top: 5%; left: -5%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(var(--accent2-rgb),.08) 0%, transparent 65%); filter: blur(55px); animation: fl-r 25s ease-in-out infinite reverse; }
+@keyframes fl-r { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-35px,45px) scale(1.08)} }
+@keyframes fl-l { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(55px,35px) scale(1.09)} }
+@keyframes fl-b { 0%,100%{transform:translate(0,0)} 33%{transform:translate(-18px,-28px)} 66%{transform:translate(12px,12px)} }
+
+/* ===== NAV ===== */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 90; height: 66px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; backdrop-filter: blur(24px) saturate(160%); background: rgba(14,21,18,.92); border-bottom: 1px solid var(--border); }
+.nav-left { display: flex; align-items: center; gap: 16px; }
+.brand-mark { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: 20px; letter-spacing: .06em; background: linear-gradient(120deg, var(--white) 45%, var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.nav-divider { width: 1px; height: 22px; background: var(--border); }
+.nav-sub { font-size: 11px; font-weight: 300; letter-spacing: .12em; color: var(--muted); }
+.nav-center { display: flex; align-items: center; gap: 8px; }
+.pill { padding: 6px 14px; border-radius: 100px; font-size: 11px; letter-spacing: .09em; font-weight: 400; border: 1px solid; display: flex; align-items: center; gap: 6px; }
+.pill-orange { border-color: rgba(var(--accent-rgb),.22); color: rgba(var(--accent-rgb),.8); background: rgba(var(--accent-rgb),.06); }
+.pill-white { border-color: rgba(255,255,255,.1); color: rgba(255,255,255,.45); background: rgba(255,255,255,.04); }
+.live-dot { width:5px; height:5px; border-radius:50%; background:#22D36A; animation:blink 2s ease infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+.nav-cta { background: linear-gradient(120deg, var(--orange) 0%, var(--amber) 100%); color: #06120C; font-family: var(--brand-font), sans-serif; font-weight: 700; font-size: 14px; padding: 12px 28px; border-radius: 100px; text-decoration: none; letter-spacing: .03em; box-shadow: 0 4px 28px rgba(var(--accent-rgb),.3), inset 0 1px 0 rgba(255,255,255,.18); transition: all .25s; }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 40px rgba(var(--accent-rgb),.42); }
+
+/* ===== HERO ===== */
+.hero { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 160px 32px 80px; overflow: hidden; }
+.hero-inner { max-width: 980px; position: relative; z-index: 3; }
+.pre-head { display: inline-flex; align-items: center; gap: 10px; background: rgba(var(--accent-rgb),.07); border: 1px solid rgba(var(--accent-rgb),.2); border-radius: 100px; padding: 10px 24px; font-size: 13px; font-weight: 300; letter-spacing: .03em; color: rgba(var(--accent-rgb),.92); margin-bottom: 38px; backdrop-filter: blur(10px); }
+.pre-dot { width:7px; height:7px; border-radius:50%; background:var(--orange); animation:blink 2s ease infinite; }
+h1.hero-h1 { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: clamp(28px, 3.6vw, 50px); line-height: 1.24; letter-spacing: -.018em; margin-bottom: 22px; max-width: 1000px; margin-left: auto; margin-right: auto; text-wrap: balance; }
+.h1-solid { color: var(--white); display: inline; }
+.h1-warm { background: linear-gradient(120deg, var(--orange) 0%, var(--amber) 80%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline; }
+.bli-chips { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 28px 0 32px; }
+.bli-chip { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 100px; background: linear-gradient(135deg, rgba(var(--accent-rgb),.10), rgba(var(--accent2-rgb),.04)); border: 1px solid rgba(var(--accent-rgb),.32); font-family: var(--brand-font), sans-serif; font-weight: 700; font-size: clamp(13px, 1.35vw, 15px); letter-spacing: .015em; color: rgba(255,255,255,.94); backdrop-filter: blur(12px); box-shadow: 0 4px 22px rgba(var(--accent-rgb),.10), inset 0 1px 0 rgba(255,255,255,.06); transition: all .25s; }
+.bli-chip:hover { background: linear-gradient(135deg, rgba(var(--accent-rgb),.18), rgba(var(--accent2-rgb),.08)); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(var(--accent-rgb),.20); }
+.bli-chip-x { width: 18px; height: 18px; border-radius: 50%; background: rgba(var(--accent-rgb),.18); color: var(--orange); display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; }
+.sub-promise { font-size: clamp(18px,2.2vw,22px); font-weight: 400; line-height: 1.78; color: rgba(228,238,232,.85); max-width: 820px; margin: 0 auto 32px; min-height: 5em; }
+.sub-promise strong { color: var(--white); font-weight: 700; }
+.sub-promise .warm { color: var(--amber); font-weight: 700; }
+.tw-cursor { display: inline-block; width: 2px; background: var(--orange); animation: tw-blink .7s step-end infinite; margin-right: 2px; vertical-align: text-bottom; }
+@keyframes tw-blink { 0%,100%{opacity:1} 50%{opacity:0} }
+.cta-group { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.cta-primary { background: linear-gradient(120deg, var(--orange) 0%, var(--amber) 100%); color: #06120C; font-family: var(--brand-font), sans-serif; font-weight: 700; font-size: 17px; padding: 21px 44px; border-radius: 14px; text-decoration: none; letter-spacing: .02em; box-shadow: 0 0 56px rgba(var(--accent-rgb),.35), inset 0 1px 0 rgba(255,255,255,.18); transition: all .28s; position: relative; overflow: hidden; }
+.cta-primary::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,.14) 0%, transparent 55%); }
+.cta-primary::after { content: ''; position: absolute; top: 0; bottom: 0; left: -50%; width: 35%; background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.32) 50%, transparent 100%); transform: skewX(-22deg); animation: shimmer-sweep 3.6s ease-in-out infinite; }
+@keyframes shimmer-sweep { 0% { left: -50%; } 60%, 100% { left: 130%; } }
+.cta-primary:hover { transform: translateY(-3px) scale(1.015); box-shadow: 0 0 80px rgba(var(--accent-rgb),.5); }
+.cta-secondary { color: rgba(228,238,232,.7); font-size: 15px; font-weight: 400; text-decoration: none; display: flex; align-items: center; gap: 7px; padding: 21px 26px; border: 1px solid rgba(255,255,255,.08); border-radius: 14px; transition: all .25s; letter-spacing: .04em; backdrop-filter: blur(8px); }
+.cta-secondary:hover { border-color: rgba(var(--accent-rgb),.28); color: var(--text); }
+.scarcity { margin-top: 22px; font-size: 13px; letter-spacing: .05em; background: linear-gradient(90deg, var(--orange), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; opacity: .85; }
+.gender-note { margin-top: 30px; font-size: 15px; color: rgba(255,255,255,.9); font-weight: 400; max-width: 620px; margin-left: auto; margin-right: auto; line-height: 1.65; letter-spacing: .01em; }
+
+/* ===== STATS ===== */
+.stats { position: relative; z-index: 1; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stats-inner { display: grid; grid-template-columns: repeat(4,1fr); max-width: 1120px; margin: 0 auto; }
+.stat-item { padding: 58px 40px; text-align: center; position: relative; transition: background .3s; }
+.stat-item:hover { background: rgba(var(--accent-rgb),.03); }
+.stat-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 54px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,.08), transparent); }
+.stat-num { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: clamp(52px,5.6vw,76px); line-height: 1; letter-spacing: -.045em; background: linear-gradient(130deg, var(--white) 20%, var(--amber) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.stat-suffix { font-size: .42em; font-weight: 300; -webkit-text-fill-color: rgba(var(--accent2-rgb),.75); vertical-align: super; }
+.stat-label { font-size: 14px; font-weight: 300; color: var(--muted); margin-top: 12px; letter-spacing: .06em; }
+
+/* ===== STORY (DARK) ===== */
+.story { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 110px 48px; }
+.section-label { font-size: 11px; letter-spacing: .2em; color: rgba(var(--accent-rgb),.62); font-weight: 300; margin-bottom: 28px; }
+.story h2 { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: clamp(32px,4vw,52px); line-height: 1.12; letter-spacing: -.025em; color: var(--white); margin-bottom: 44px; }
+.story h2 .gold { background: linear-gradient(120deg, var(--orange), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.story p { font-size: clamp(17px,1.95vw,21px); font-weight: 400; line-height: 1.85; margin-bottom: 26px; color: rgba(228,238,232,.85); }
+.hl-word { color: rgba(228,238,232,.24); transition: color .25s ease; }
+.hl-word.lit { color: rgba(228,238,232,.92); }
+.story p strong { font-weight: 700; color: var(--white); }
+.story p em { background: linear-gradient(90deg, var(--orange-2), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal; font-weight: 700; }
+.story-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin: 42px 0; }
+.story-list li { display: flex; align-items: center; gap: 18px; font-size: clamp(16px,1.85vw,20px); font-weight: 400; line-height: 1.6; color: rgba(228,238,232,.85); padding: 20px 24px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; transition: all .3s; }
+.story-list li:hover { background: rgba(var(--accent-rgb),.05); border-color: rgba(var(--accent-rgb),.14); transform: translateX(-4px); }
+.li-icon { width: 38px; height: 38px; border-radius: 11px; flex-shrink: 0; background: linear-gradient(135deg, rgba(var(--accent-rgb),.18), rgba(var(--accent2-rgb),.08)); border: 1px solid rgba(var(--accent-rgb),.14); display: flex; align-items: center; justify-content: center; font-size: 17px; }
+.story-list li strong { color: var(--white); font-weight: 700; }
+.quote-block { margin-top: 54px; padding: 40px 46px; background: linear-gradient(135deg, rgba(var(--accent-rgb),.07) 0%, rgba(var(--accent2-rgb),.04) 50%, rgba(var(--accent-rgb),.03) 100%); border: 1px solid rgba(var(--accent-rgb),.14); border-radius: 20px; backdrop-filter: blur(20px); position: relative; overflow: hidden; }
+.quote-block::before { content: ''; position: absolute; top: 0; right: 0; width: 240px; height: 240px; background: radial-gradient(ellipse at top right, rgba(var(--accent2-rgb),.12), transparent 68%); pointer-events: none; }
+.quote-text { font-size: clamp(18px,2vw,24px); font-weight: 700; line-height: 1.55; color: var(--white); margin-bottom: 18px; font-style: italic; letter-spacing: -.012em; }
+.quote-attr { font-size: 13px; font-weight: 300; letter-spacing: .1em; background: linear-gradient(90deg, var(--orange), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* ===== LIGHT SECTION ===== */
+.light-section { position: relative; z-index: 2; background: var(--light-bg); color: var(--light-text); overflow: hidden; }
+.light-section.alt { background: linear-gradient(180deg, var(--light-bg) 0%, var(--light-bg-2) 100%); }
+.light-wrap { max-width: 1180px; margin: 0 auto; padding: 110px 48px 110px; }
+.light-wrap.narrow { max-width: 920px; }
+.light-eyebrow { font-size: 11px; letter-spacing: .22em; font-weight: 300; color: rgba(var(--accent-rgb),.9); margin-bottom: 24px; }
+.light-h2 { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: clamp(32px,4.2vw,54px); line-height: 1.1; letter-spacing: -.027em; color: var(--light-text); margin-bottom: 26px; }
+.light-h2 .orange { color: var(--orange); }
+.light-intro { font-size: clamp(17px,1.85vw,21px); font-weight: 400; line-height: 1.78; color: rgba(30,43,37,.75); max-width: 800px; margin-bottom: 56px; }
+.light-intro strong { color: var(--light-text); font-weight: 700; }
+.light-intro em { background: linear-gradient(90deg, var(--orange), #4a6f57); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal; font-weight: 700; }
+.does-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 22px; }
+.does-card { padding: 34px 30px; background: #fff; border: 1px solid var(--light-border); border-radius: 20px; transition: all .35s; box-shadow: 0 6px 22px rgba(30,43,37,.05); position: relative; overflow: hidden; }
+.does-card:hover { border-color: rgba(var(--accent-rgb),.25); transform: translateY(-4px); box-shadow: 0 24px 50px rgba(30,43,37,.10); }
+.does-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--orange), var(--amber)); opacity: 0; transition: opacity .35s; }
+.does-card:hover::before { opacity: 1; }
+.does-emoji { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: linear-gradient(135deg, rgba(var(--accent-rgb),.12), rgba(var(--accent2-rgb),.06)); border: 1px solid rgba(var(--accent-rgb),.18); font-size: 24px; margin-bottom: 18px; }
+.does-h3 { font-family: var(--brand-font), sans-serif; font-weight: 700; font-size: 19px; color: var(--light-text); margin-bottom: 10px; letter-spacing: -.005em; }
+.does-text { font-size: clamp(14.5px,1.55vw,16px); line-height: 1.7; color: rgba(30,43,37,.72); font-weight: 400; }
+
+/* ===== HOW / BONUSES (DARK, stage cards) ===== */
+.how, .bonuses { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 110px 48px; }
+.how h2, .bonuses h2 { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: clamp(30px,3.8vw,50px); line-height: 1.14; letter-spacing: -.025em; color: var(--white); margin-bottom: 18px; }
+.how h2 .gold, .bonuses h2 .gold { background: linear-gradient(120deg, var(--orange), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.how-intro { font-size: clamp(16px,1.85vw,20px); line-height: 1.7; color: rgba(228,238,232,.72); max-width: 740px; margin-bottom: 50px; }
+.stage-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.stage-grid.five .stage-card:nth-child(4), .stage-grid.five .stage-card:nth-child(5) { grid-column: span 1; }
+.stage-card { padding: 40px 30px 34px; background: rgba(255,255,255,.025); border: 1px solid rgba(255,255,255,.07); border-radius: 22px; position: relative; overflow: hidden; transition: all .35s; }
+.stage-card:hover { border-color: rgba(var(--accent-rgb),.22); background: rgba(var(--accent-rgb),.04); transform: translateY(-4px); box-shadow: 0 24px 50px rgba(0,0,0,.4); }
+.stage-num { font-weight: 900; font-size: 66px; line-height: .9; letter-spacing: -.04em; color: transparent; -webkit-text-stroke: 1px rgba(var(--accent-rgb),.34); position: absolute; top: 16px; left: 24px; pointer-events: none; }
+.stage-tag { display: inline-block; font-size: 10px; letter-spacing: .18em; font-weight: 300; color: rgba(var(--accent-rgb),.7); margin-bottom: 16px; }
+.stage-h3 { font-family: var(--brand-font), sans-serif; font-weight: 700; font-size: 21px; color: var(--white); margin-bottom: 12px; line-height: 1.3; letter-spacing: -.01em; }
+.stage-text { font-size: 15px; line-height: 1.7; color: rgba(228,238,232,.72); font-weight: 400; }
+.stage-emoji { font-size: 30px; margin-bottom: 12px; display: block; }
+
+/* ===== INCLUDED LIST (LIGHT) ===== */
+.inc-list { list-style: none; display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; margin: 8px 0 56px; }
+.inc-list li { display: flex; align-items: center; gap: 14px; font-size: clamp(15px,1.6vw,17px); font-weight: 500; color: rgba(30,43,37,.85); padding: 18px 22px; background: #fff; border: 1px solid var(--light-border); border-radius: 14px; box-shadow: 0 6px 20px rgba(30,43,37,.04); }
+.inc-check { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), var(--amber)); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 13px; }
+
+/* ===== FIT CHECK (LIGHT) ===== */
+.fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 12px; }
+.fit-col { padding: 38px 36px 40px; border-radius: 22px; }
+.fit-col.yes { background: linear-gradient(135deg, rgba(var(--accent-rgb),.07), rgba(var(--accent2-rgb),.04)); border: 1px solid rgba(var(--accent-rgb),.24); }
+.fit-col.no { background: rgba(30,43,37,.04); border: 1px solid var(--light-border); }
+.fit-h3 { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: 21px; margin-bottom: 22px; letter-spacing: -.005em; }
+.fit-h3.yes { color: var(--orange); }
+.fit-h3.no { color: rgba(30,43,37,.5); }
+.fit-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.fit-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; line-height: 1.6; font-weight: 400; }
+.fit-list.yes li { color: rgba(30,43,37,.85); }
+.fit-list.no li { color: rgba(30,43,37,.5); }
+.fit-icon { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; margin-top: 2px; }
+.fit-icon.yes { background: var(--orange); color: #fff; }
+.fit-icon.no { background: rgba(30,43,37,.12); color: rgba(30,43,37,.45); }
+
+/* ===== OBJECTION (DARK) ===== */
+.objection { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 100px 48px; text-align: center; }
+.objection h2 { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: clamp(24px,3vw,38px); line-height: 1.3; color: var(--white); margin-bottom: 26px; font-style: italic; }
+.objection p { font-size: clamp(17px,1.9vw,20px); line-height: 1.85; color: rgba(228,238,232,.8); margin: 0 auto; max-width: 720px; }
+.objection p em { background: linear-gradient(90deg, var(--orange-2), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal; font-weight: 800; }
+
+/* ===== MID CTA (DARK) ===== */
+.mid-cta { position: relative; z-index: 1; text-align: center; padding: 90px 32px; overflow: hidden; }
+.mid-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 90% at 50% 50%, rgba(var(--accent-rgb),.10), transparent 65%); pointer-events: none; }
+.mid-cta h2 { position: relative; font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: clamp(26px,3.4vw,42px); line-height: 1.2; letter-spacing: -.02em; color: var(--white); margin-bottom: 28px; }
+.mid-cta h2 .gold { background: linear-gradient(120deg, var(--orange), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.mid-cta .cta-group { position: relative; }
+
+/* ===== ABOUT (LIGHT) ===== */
+.about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; align-items: center; margin-top: 12px; }
+.about-photo { aspect-ratio: 4/5; border-radius: 24px; background: linear-gradient(160deg, rgba(var(--accent-rgb),.12), rgba(var(--accent2-rgb),.06)); border: 2px dashed rgba(var(--accent-rgb),.4); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; color: rgba(30,43,37,.55); padding: 24px; }
+.about-photo .ph-emoji { font-size: 40px; }
+.about-photo .ph-note { font-size: 14px; font-weight: 500; line-height: 1.5; max-width: 220px; }
+.about-text p { font-size: clamp(16px,1.75vw,18px); line-height: 1.8; color: rgba(30,43,37,.82); margin-bottom: 18px; }
+.about-text p strong { color: var(--light-text); font-weight: 700; }
+.about-sign { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: 22px; color: var(--orange); margin-top: 6px; }
+
+/* ===== FAQ (LIGHT) ===== */
+.faq-wrap { max-width: 860px; margin: 12px auto 0; display: flex; flex-direction: column; gap: 12px; }
+.faq-item { background: #fff; border: 1px solid var(--light-border); border-radius: 16px; overflow: hidden; transition: border-color .3s, box-shadow .3s; }
+.faq-item[open] { border-color: rgba(var(--accent-rgb),.3); box-shadow: 0 14px 34px rgba(30,43,37,.07); }
+.faq-item summary { cursor: pointer; list-style: none; padding: 24px 28px; font-family: var(--brand-font), sans-serif; font-weight: 700; font-size: clamp(16px,1.7vw,18px); color: var(--light-text); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-q-icon { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: rgba(var(--accent-rgb),.1); color: var(--orange); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 18px; transition: transform .3s; }
+.faq-item[open] .faq-q-icon { transform: rotate(45deg); }
+.faq-a { padding: 0 28px 26px; font-size: clamp(15px,1.6vw,17px); line-height: 1.75; color: rgba(30,43,37,.75); }
+
+/* ===== OFFER + FORM (DARK) ===== */
+.offer { position: relative; z-index: 1; padding: 120px 32px 120px; overflow: hidden; }
+.offer::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 30%, rgba(var(--accent-rgb),.14), transparent 62%); pointer-events: none; }
+.offer-inner { position: relative; max-width: 620px; margin: 0 auto; text-align: center; }
+.offer .section-label { text-align: center; }
+.offer h2 { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: clamp(32px,4.4vw,56px); line-height: 1.1; letter-spacing: -.027em; color: var(--white); margin-bottom: 18px; }
+.offer h2 .gold { background: linear-gradient(120deg, var(--orange), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.offer-lead { font-size: clamp(16px,1.85vw,19px); color: rgba(228,238,232,.78); line-height: 1.7; margin-bottom: 40px; }
+.offer-card { background: linear-gradient(135deg, rgba(var(--accent-rgb),.07), rgba(var(--accent2-rgb),.03)); border: 1px solid rgba(var(--accent-rgb),.28); border-radius: 26px; padding: 44px 40px; backdrop-filter: blur(20px); box-shadow: 0 30px 80px rgba(0,0,0,.45); text-align: right; }
+.price-row { text-align: center; margin-bottom: 8px; }
+.price-num { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: clamp(58px,8vw,86px); line-height: 1; letter-spacing: -.045em; background: linear-gradient(130deg, var(--white) 25%, var(--amber) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.price-note { text-align: center; font-size: 14px; color: rgba(228,238,232,.6); letter-spacing: .04em; margin-bottom: 30px; }
+.lead-form { display: flex; flex-direction: column; gap: 14px; }
+.lead-form label { font-size: 13px; font-weight: 500; color: rgba(228,238,232,.7); margin-bottom: -6px; }
+.lead-form input[type=text], .lead-form input[type=email], .lead-form input[type=tel] { width: 100%; font-family: var(--brand-font), sans-serif; font-size: 16px; padding: 16px 18px; border-radius: 12px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.14); color: var(--white); transition: border-color .25s, background .25s; }
+.lead-form input::placeholder { color: rgba(228,238,232,.4); }
+.lead-form input:focus { outline: none; border-color: rgba(var(--accent-rgb),.6); background: rgba(255,255,255,.08); }
+.consent { display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.5; color: rgba(228,238,232,.62); margin-top: 4px; }
+.consent input { margin-top: 3px; width: 16px; height: 16px; accent-color: var(--orange); flex-shrink: 0; }
+.consent a { color: rgba(var(--accent2-rgb),.9); }
+.form-submit { margin-top: 10px; width: 100%; border: none; cursor: pointer; background: linear-gradient(120deg, var(--orange) 0%, var(--amber) 100%); color: #06120C; font-family: var(--brand-font), sans-serif; font-weight: 800; font-size: 18px; padding: 20px; border-radius: 14px; letter-spacing: .01em; box-shadow: 0 0 50px rgba(var(--accent-rgb),.35), inset 0 1px 0 rgba(255,255,255,.2); transition: transform .2s, box-shadow .25s; position: relative; overflow: hidden; }
+.form-submit::after { content: ''; position: absolute; top: 0; bottom: 0; left: -50%; width: 35%; background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.32) 50%, transparent 100%); transform: skewX(-22deg); animation: shimmer-sweep 3.6s ease-in-out infinite; }
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 0 70px rgba(var(--accent-rgb),.5); }
+.form-ok { display: none; text-align: center; padding: 30px 10px; color: var(--white); font-size: 18px; font-weight: 700; line-height: 1.6; }
+.offer-reassure { margin-top: 22px; font-size: 13px; color: rgba(228,238,232,.55); }
+
+/* ===== FOOTER ===== */
+.site-footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 56px 48px; text-align: center; }
+.footer-mark { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: 22px; letter-spacing: .06em; background: linear-gradient(120deg, var(--white) 45%, var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; display: inline-block; }
+.footer-meta { font-size: 12px; letter-spacing: .1em; color: var(--muted); font-weight: 300; line-height: 1.7; }
+
+/* ===== CURSOR GLOW ===== */
+#cursor-glow { position: fixed; pointer-events: none; z-index: 50; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--accent-rgb),.18) 0%, rgba(var(--accent2-rgb),.08) 40%, transparent 70%); filter: blur(48px); transform: translate(-50%, -50%); opacity: 0; transition: opacity .45s ease; }
+#cursor-glow.visible { opacity: 1; }
+
+/* ===== FADEUP ===== */
+.fadeup-ready { opacity: 0; transform: translateY(28px); }
+.fadeup-ready.fadeup-done { animation: fadeup-in .6s cubic-bezier(.22,.68,0,1.2) both; }
+@keyframes fadeup-in { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+.sticky-cta { display: none; }
+
+/* ===== מובייל ===== */
+@media (max-width: 880px) {
+ nav { padding: 0 20px; }
+ .nav-center { display: none; }
+ .nav-sub { display: none; }
+ .stats-inner { grid-template-columns: 1fr 1fr; }
+ .does-grid { grid-template-columns: 1fr; }
+ .stage-grid { grid-template-columns: 1fr; }
+ .inc-list { grid-template-columns: 1fr; }
+ .fit-grid { grid-template-columns: 1fr; }
+ .about-grid { grid-template-columns: 1fr; gap: 28px; }
+ .about-photo { max-width: 320px; margin: 0 auto; width: 100%; }
+ .light-wrap, .story, .how, .bonuses, .objection { padding-left: 22px; padding-right: 22px; }
+ .offer-card { padding: 32px 22px; }
+ .hero { padding-top: 130px; }
+ .sticky-cta { display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 95; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(14,21,18,.94); backdrop-filter: blur(20px); border-top: 1px solid var(--border); }
+ .sticky-cta a { display: block; text-align: center; background: linear-gradient(120deg, var(--orange) 0%, var(--amber) 100%); color: #06120C; font-weight: 700; font-size: 16px; padding: 16px; border-radius: 12px; text-decoration: none; box-shadow: 0 4px 20px rgba(var(--accent-rgb),.3); }
+ body { padding-bottom: 76px; }
+}
+
+</style>
+</head>
+<body>
+
+<div id="cursor-glow"></div>
+<div id="scroll-progress"></div>
+
+<div class="scene">
+ <div class="a-right"></div><div class="a-left"></div><div class="a-btm"></div><div class="a-top-left"></div>
+ <div class="orb-a"></div><div class="orb-b"></div>
+ <div class="ring ring-1"></div><div class="ring ring-2"></div><div class="ring ring-3"></div>
+ <div class="scene-grid"></div>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav>
+ <div class="nav-left"><span class="brand-mark">RichLife</span><div class="nav-divider"></div><span class="nav-sub">קורס דיגיטלי</span></div>
+ <div class="nav-center"><div class="pill pill-orange"><span class="live-dot"></span>גישה מיידית</div><div class="pill pill-white">97 ₪ בלבד</div></div>
+ <a href="#join" class="nav-cta">אני רוצה להתחיל</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+ <div class="hero-inner">
+  <div class="pre-head"><span class="pre-dot"></span>אם כבר חודשים את אומרת לעצמך "אני חייבת להתחיל להשקיע"</div>
+
+  <h1 class="hero-h1">
+   <span class="h1-solid">עוד שעה מעכשיו, </span><span class="h1-warm">תדעי בדיוק איך לעשות את ההשקעה הראשונה שלך.</span>
+  </h1>
+
+  <div class="bli-chips">
+   <span class="bli-chip"><span class="bli-chip-x">×</span>בלי להסתבך</span>
+   <span class="bli-chip"><span class="bli-chip-x">×</span>בלי לפחד</span>
+   <span class="bli-chip"><span class="bli-chip-x">×</span>בלי מושגים מסובכים</span>
+  </div>
+
+  <p class="sub-promise" id="sub-promise-el"></p>
+
+  <div class="cta-group">
+   <a href="#join" class="cta-primary">אני רוצה להתחיל להשקיע</a>
+   <a href="#how" class="cta-secondary">מה יש בקורס ↓</a>
+  </div>
+
+  <p class="scarcity">הכל ב-97 ₪. פחות מארוחה בחוץ, אבל הפעם את קונה לעצמך הזדמנות.</p>
+
+  <p class="gender-note">בשפה רגועה, בגובה העיניים, בלי לגרום לך להרגיש שאת אמורה לדעת משהו שאף פעם לא לימדו אותך.</p>
+ </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats">
+ <div class="stats-inner">
+  <div class="stat-item"><div class="stat-num" data-target="5"><span class="stat-countup">5</span></div><div class="stat-label">שלבים ברורים</div></div>
+  <div class="stat-item"><div class="stat-num" data-target="3"><span class="stat-countup">3</span></div><div class="stat-label">בונוסים במתנה</div></div>
+  <div class="stat-item"><div class="stat-num" data-target="10"><span class="stat-countup">10</span><span class="stat-suffix"> דק'</span></div><div class="stat-label">אורך כל שיעור, בקצר</div></div>
+  <div class="stat-item"><div class="stat-num" data-target="97"><span class="stat-countup">97</span><span class="stat-suffix"> ₪</span></div><div class="stat-label">וזה הכל, גישה מיידית</div></div>
+ </div>
+</section>
+
+<!-- ===== STORY / PROBLEM ===== -->
+<section class="story" id="story-section">
+ <div class="section-label">// מה עוצר אותך</div>
+ <h2>את יודעת שזה חשוב. אבל משהו <span class="gold">עוצר אותך.</span></h2>
+
+ <p>כבר הבנת שלהשאיר את הכסף בעו"ש זה לא נכון. את מרגישה את המחירים עולים, שהמשכורת לא באותו קצב, ומתחילה לחשוב על לשים את הכסף שיעבוד.</p>
+ <p>אבל פתאום זה מרגיש שכולם מסביבך כבר מבינים. אחת מספרת על קרן שהשקיעה בה, חברה מדברת על S&amp;P, ומישהו בכלל טוען שקריפטו זה העתיד. ואת? זה מרגיש לך <em>גדול עלייך</em>, כאילו זה עולם שלם שלא ברור מאיפה בכלל נכנסים אליו.</p>
+ <p>ואולי כבר תפסת אומץ וניסית להבין. הבעיה היא שיצאת יותר מבולבלת מרוב השמות והמושגים המפחידים, ובאיזשהו שלב המוח פשוט אומר "עזבי, אחר כך". ואז עובר עוד חודש. ועוד חודש. והכסף עדיין באותו מקום.</p>
+
+ <ul class="story-list">
+  <li class="fadeup-ready" style="--delay:0s"><span class="li-icon">😰</span><span>פחד להפסיד כסף.</span></li>
+  <li class="fadeup-ready" style="--delay:.08s"><span class="li-icon">🤔</span><span>פחד לבחור משהו לא נכון.</span></li>
+  <li class="fadeup-ready" style="--delay:.16s"><span class="li-icon">🙈</span><span>פחד להרגיש טיפשה מול מושגים שלא מכירים.</span></li>
+  <li class="fadeup-ready" style="--delay:.24s"><span class="li-icon">🧊</span><span>פחד להתחיל, ואז לא לדעת מה עושים הלאה.</span></li>
+  <li class="fadeup-ready" style="--delay:.32s"><span class="li-icon">⏳</span><span>ובינתיים, הכסף פשוט יושב ולא עובד.</span></li>
+ </ul>
+
+ <div class="quote-block">
+  <div class="quote-text">"עזבי, אני אגיע לזה אחר כך."</div>
+  <div class="quote-attr">מה שהמוח אומר, בכל פעם מחדש</div>
+ </div>
+</section>
+
+<!-- ===== SOLUTION + BEFORE/AFTER (LIGHT) ===== -->
+<section class="light-section alt" id="solution">
+ <div class="light-wrap">
+  <div class="light-eyebrow">// בדיוק בשביל זה נוצר הקורס</div>
+  <h2 class="light-h2">להשקיע לראשונה, <span class="orange">בקלות.</span></h2>
+  <p class="light-intro">זה לא קורס שינסה להפוך אותך למומחית בשוק ההון, ולא עשרות שעות של גרפים וטבלאות. זו תוכנית דיגיטלית קצרה, בשפה נגישה וברורה, שלוקחת אותך צעד אחר צעד עד ההשקעה הראשונה שלך בפועל. <strong>גם אם מתחילים מ-50 או 100 ש"ח בחודש.</strong> את לא כאן כדי להתעשר מחר בבוקר, את כאן כדי להפוך ממישהי שחושבת על השקעות, למישהי שכבר התחילה.</p>
+
+  <div class="shifts-table" style="display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--light-border);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 30px 70px rgba(30,43,37,.06);">
+   <div style="padding:22px 30px;font-size:12px;letter-spacing:.14em;font-weight:700;background:rgba(30,43,37,.04);color:rgba(30,43,37,.55);border-left:1px solid var(--light-border);">היום</div>
+   <div style="padding:22px 30px;font-size:12px;letter-spacing:.14em;font-weight:700;background:linear-gradient(135deg,rgba(var(--accent-rgb),.09),rgba(var(--accent2-rgb),.05));color:var(--orange);">אחרי הקורס</div>
+
+   <div class="sc-out">הכסף יושב בעו"ש</div>
+   <div class="sc-in">הכסף מושקע ומתחיל לעבוד</div>
+   <div class="sc-out">מוצפת ממאה דעות סותרות</div>
+   <div class="sc-in">דרך אחת פשוטה וברורה</div>
+   <div class="sc-out">מפחדת לבחור לא נכון</div>
+   <div class="sc-in">מבינה מה את עושה ולמה</div>
+   <div class="sc-out">"אני אגיע לזה אחר כך"</div>
+   <div class="sc-in">כבר עשית את זה בפועל</div>
+   <div class="sc-out">מושגים שנשמעים כמו סינית</div>
+   <div class="sc-in">מושגים ברורים ופשוטים</div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== HOW / 5 STEPS (DARK) ===== -->
+<section class="how" id="how">
+ <div class="section-label">// איך זה עובד</div>
+ <h2>5 שלבים, מ"אין לי מושג" <span class="gold">ל"עשיתי".</span></h2>
+ <p class="how-intro">הקורס בנוי במודולים קצרים וברורים, שלוקחים אותך מהשלב של "אני יודעת שאני צריכה, אבל אין לי מושג איך", עד לביצוע ההשקעה הראשונה בפועל.</p>
+
+ <div class="stage-grid five">
+  <div class="stage-card fadeup-ready" style="--delay:0s">
+   <div class="stage-num">01</div><div class="stage-tag">שלב 1</div>
+   <div class="stage-h3">מה זו בכלל השקעה, ולמה להתחיל</div>
+   <div class="stage-text">עושים סדר במושגים, מבינות למה כסף בעו"ש לא עובד בשבילך, ולמה להתחיל מוקדם חשוב הרבה יותר מלהתחיל מושלם.</div>
+  </div>
+  <div class="stage-card fadeup-ready" style="--delay:.08s">
+   <div class="stage-num">02</div><div class="stage-tag">שלב 2</div>
+   <div class="stage-h3">אילו אפשרויות מתאימות למתחילות</div>
+   <div class="stage-text">מכירות את האפשרויות הקיימות, היתרונות והחסרונות של כל אחת, ובמה בכלל לא נוגעות בשלב הזה. סוף להצפה.</div>
+  </div>
+  <div class="stage-card fadeup-ready" style="--delay:.16s">
+   <div class="stage-num">03</div><div class="stage-tag">שלב 3</div>
+   <div class="stage-h3">כמה להשקיע ולכמה זמן</div>
+   <div class="stage-text">איך לחשוב על הסכום, להגדיר מטרה, ולקבל החלטה שמרגישה נכונה גם מבחינה כלכלית וגם מבחינה רגשית.</div>
+  </div>
+  <div class="stage-card fadeup-ready" style="--delay:0s">
+   <div class="stage-num">04</div><div class="stage-tag">שלב 4</div>
+   <div class="stage-h3">מבצעות את ההשקעה הראשונה</div>
+   <div class="stage-text">השלב שבו מפסיקים ללמוד ומתחילים לעשות. אני אראה לך בצורה פשוטה וברורה איך לבצע את ההשקעה הראשונה, שלב אחר שלב.</div>
+  </div>
+  <div class="stage-card fadeup-ready" style="--delay:.08s">
+   <div class="stage-num">05</div><div class="stage-tag">שלב 5</div>
+   <div class="stage-h3">היום שאחרי ההשקעה</div>
+   <div class="stage-text">מה עושים כשהשוק יורד? איך ממשיכים ברוגע ובביטחון, בלי החלטות שמתקבלות מתוך פחד או חוסר סבלנות.</div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== OUTCOMES (LIGHT) ===== -->
+<section class="light-section" id="outcomes">
+ <div class="light-wrap">
+  <div class="light-eyebrow">// מה יקרה לך אחרי</div>
+  <h2 class="light-h2">מ"חושבת על זה" <span class="orange">ל"עשיתי את זה".</span></h2>
+  <p class="light-intro">אחרי חודשים, ואולי שנים, של דחיות והתלבטויות, ככה זה מרגיש בצד השני:</p>
+
+  <div class="does-grid">
+   <div class="does-card fadeup-ready" style="--delay:0s">
+    <div class="does-emoji">✅</div>
+    <div class="does-h3">סוף סוף תעשי את זה</div>
+    <div class="does-text">אחרי כל הדחיות, ההתלבטויות והחשש לטעות, יש לך השקעה שביצעת בפועל.</div>
+   </div>
+   <div class="does-card fadeup-ready" style="--delay:.08s">
+    <div class="does-emoji">📈</div>
+    <div class="does-h3">תראי איך הכסף עובד</div>
+    <div class="does-text">בפעם הראשונה תראי בעיניים איך השקעה נועדה לצמוח לאורך זמן, במקום לשבת בעו"ש.</div>
+   </div>
+   <div class="does-card fadeup-ready" style="--delay:.16s">
+    <div class="does-emoji">🧩</div>
+    <div class="does-h3">מושגים שהיו כמו סינית</div>
+    <div class="does-text">מה שפעם נשמע מפחיד יתחיל להיות הרבה יותר ברור ופשוט להבנה.</div>
+   </div>
+   <div class="does-card fadeup-ready" style="--delay:0s">
+    <div class="does-emoji">🛡️</div>
+    <div class="does-h3">ביטחון בהחלטות</div>
+    <div class="does-text">במקום להרגיש שאת מנחשת או מהמרת, תביני את השיקולים מאחורי כל החלטה שלך.</div>
+   </div>
+   <div class="does-card fadeup-ready" style="--delay:.08s">
+    <div class="does-emoji">🚀</div>
+    <div class="does-h3">תיאבון לצמיחה</div>
+    <div class="does-text">ברגע שעושים את הצעד הראשון, נפתח התיאבון ללמוד עוד ולקבל החלטות טובות יותר.</div>
+   </div>
+   <div class="does-card fadeup-ready" style="--delay:.16s">
+    <div class="does-emoji">🌱</div>
+    <div class="does-h3">התחלה שממשיכה איתך</div>
+    <div class="does-text">הצעד הראשון הזה הוא לא הסוף, הוא הבסיס לכל החלטה כלכלית טובה שתבוא אחריו.</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== BONUSES (DARK) ===== -->
+<section class="bonuses" id="bonuses">
+ <div class="section-label">// וזה לא הכל</div>
+ <h2>3 בונוסים שיעשו לך את זה <span class="gold">אפילו יותר קל.</span></h2>
+ <p class="how-intro">כדי שיהיה לך אפילו יותר פשוט להתחיל ולקבל החלטות בביטחון, הכנתי לך שלושה כלים שמלווים אותך בדרך.</p>
+
+ <div class="stage-grid">
+  <div class="stage-card fadeup-ready" style="--delay:0s">
+   <span class="stage-emoji">🎯</span><div class="stage-tag">בונוס 1</div>
+   <div class="stage-h3">מחשבון יעדים והשקעות</div>
+   <div class="stage-text">מכניסה מטרה, יעד כספי ומספר שנים, והמחשבון אומר לך כמה להשקיע כל חודש. סוף לשאלה "כמה בכלל?".</div>
+  </div>
+  <div class="stage-card fadeup-ready" style="--delay:.08s">
+   <span class="stage-emoji">📖</span><div class="stage-tag">בונוס 2</div>
+   <div class="stage-h3">מילון מושגים בלי סינית</div>
+   <div class="stage-text">עמוד מושגים ברור ונגיש, בשפה שגם ילד בכיתה ד' יבין. כי מושגים נשמעים מפחידים רק כי אף אחד לא הסביר אותם פשוט.</div>
+  </div>
+  <div class="stage-card fadeup-ready" style="--delay:.16s">
+   <span class="stage-emoji">✅</span><div class="stage-tag">בונוס 3</div>
+   <div class="stage-h3">צ'ק ליסט להשקעה</div>
+   <div class="stage-text">רשימת צעדים פשוטה שמלווה אותך לאורך התהליך ומוודאת שלא פספסת שום דבר בדרך.</div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== MID CTA ===== -->
+<section class="mid-cta">
+ <h2>מוכנה לעשות סוף סוף <span class="gold">את הצעד הראשון?</span></h2>
+ <div class="cta-group" style="justify-content:center">
+  <a href="#join" class="cta-primary">אני רוצה להתחיל · 97 ₪</a>
+ </div>
+</section>
+
+<!-- ===== WHAT'S INCLUDED + FIT (LIGHT) ===== -->
+<section class="light-section" id="fit">
+ <div class="light-wrap narrow">
+  <div class="light-eyebrow">// מה כולל הקורס</div>
+  <h2 class="light-h2">הכל פשוט, <span class="orange">בקצב שלך.</span></h2>
+  <ul class="inc-list">
+   <li><span class="inc-check">✓</span>קורס דיגיטלי מוקלט</li>
+   <li><span class="inc-check">✓</span>צפייה מהמחשב או מהטלפון</li>
+   <li><span class="inc-check">✓</span>שיעורים קצרים וממוקדים (עד 10 דק')</li>
+   <li><span class="inc-check">✓</span>מעבר בקצב שלך</li>
+   <li><span class="inc-check">✓</span>גישה מיידית לאחר הרכישה</li>
+   <li><span class="inc-check">✓</span>ללא צורך בידע קודם</li>
+  </ul>
+
+  <div class="fit-grid">
+   <div class="fit-col yes">
+    <div class="fit-h3 yes">הקורס בשבילך אם</div>
+    <ul class="fit-list yes">
+     <li><span class="fit-icon yes">✓</span>את רוצה להתחיל להשקיע אבל לא יודעת מאיפה.</li>
+     <li><span class="fit-icon yes">✓</span>את מרגישה שהשקעות זה גדול עלייך.</li>
+     <li><span class="fit-icon yes">✓</span>את רוצה להתחיל מסכום קטן.</li>
+     <li><span class="fit-icon yes">✓</span>את לא מחפשת ייעוץ אישי, אלא דרך פשוטה לצעד ראשון.</li>
+     <li><span class="fit-icon yes">✓</span>את רוצה להבין מה את עושה ולא להרגיש שאת מהמרת.</li>
+    </ul>
+   </div>
+   <div class="fit-col no">
+    <div class="fit-h3 no">פחות מתאים אם</div>
+    <ul class="fit-list no">
+     <li><span class="fit-icon no">×</span>את מחפשת מישהי שתבנה לך תוכנית כלכלית מלאה.</li>
+     <li><span class="fit-icon no">×</span>יש לך סכום גדול ואת רוצה התאמה אישית.</li>
+     <li><span class="fit-icon no">×</span>את רוצה ליווי, מענה לשאלות ובדיקת המצב האישי שלך.</li>
+     <li><span class="fit-icon no">×</span>את מחפשת קורס מתקדם לשוק ההון, מניות וקרנות סל.</li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== OBJECTION (DARK) ===== -->
+<section class="objection">
+ <h2>"אבל יש מלא מידע בחינם באינטרנט..."</h2>
+ <p>נכון. והבעיה היא לא שחסר מידע, אלא שיש יותר מדי. כל אחד ממליץ על משהו אחר, במושגים אחרים, ובסוף במקום לקבל תשובה את יוצאת יותר מבולבלת. הקורס הזה לא נועד לתת לך עוד מידע. הוא נועד לעשות לך <em>סדר</em>, ולהראות דרך אחת פשוטה וברורה להשקעה ראשונה, בלי כל המילים המפוצצות שגורמות לרוב האנשים לסגור את החלון אחרי שתי דקות.</p>
+</section>
+
+<!-- ===== ABOUT / BIO (LIGHT) ===== -->
+<section class="light-section alt" id="about">
+ <div class="light-wrap">
+  <div class="light-eyebrow">// למה להקשיב דווקא לי</div>
+  <h2 class="light-h2">אם עוד לא הכרנו, <span class="orange">היי, אני טלי.</span></h2>
+  <div class="about-grid">
+   <div class="about-photo">
+    <div class="ph-emoji">📷</div>
+    <div class="ph-note">מקום לתמונה שלך. לחצי על "עריכה" והחליפי, או שלחי לי אותה ואשבץ.</div>
+   </div>
+   <div class="about-text">
+    <p>ב-3 השנים האחרונות אני מלווה זוגות ויחידים לשליטה טובה יותר בכסף, חיסכון, השקעות וצמיחה כלכלית. למדתי ייעוץ כלכלי, ייעוץ משכנתאות וגם NLP Master, כי מבחינתי כסף הוא אף פעם לא רק מספרים באקסל. הוא גם פחדים, הרגלים ואמונות מהבית.</p>
+    <p>לימדתי חינוך פיננסי בבתי ספר מכיתה ד' ועד י"א, הרציתי מול צעירים בסיכון, וליוויתי רווקים, זוגות ומשפחות מגיל 19 ועד 54. שם למדתי לקחת מושגים שנשמעים מסובכים, ולהסביר אותם בשפה פשוטה שכל אחת מבינה, גם בלי שום רקע.</p>
+    <p>גם הסיפור האישי שלי עם כסף התחיל ממקום לא פשוט. יחד עם דרור, בעלי, בנינו לעצמנו דרך כלכלית אחרת: חסכנו, למדנו, השקענו וקיבלנו החלטות אמיצות. <strong>היום, בגיל 27, יש לנו נכסים והשקעות בשווי מעל 1.7 מיליון ש"ח, 5 השקעות נדל"ן (3 בארץ ו-2 בחו"ל) ותיק בשוק ההון. בלי ירושה, בלי לזכות בלוטו.</strong></p>
+    <p>את הקורס הזה יצרתי כדי לתת לך את הצעד הראשון שכל כך הרבה נשים דוחות: להבין השקעות בפשטות, להפסיק לפחד, ולעשות את ההשקעה הראשונה שלך בלי להרגיש שאת מהמרת על הכסף שלך.</p>
+    <div class="about-sign">טלי, RichLife</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== FAQ (LIGHT) ===== -->
+<section class="light-section" id="faq">
+ <div class="light-wrap narrow">
+  <div class="light-eyebrow">// אולי שאלת את עצמך</div>
+  <h2 class="light-h2">מה שכולן <span class="orange">שואלות.</span></h2>
+  <div class="faq-wrap">
+   <details class="faq-item">
+    <summary>אני ממש מתחילה, בלי שום רקע. זה יתאים לי? <span class="faq-q-icon">+</span></summary>
+    <div class="faq-a">בדיוק בשבילך. הקורס לא מניח שום ידע קודם, ומסביר כל מושג בשפה פשוטה, בגובה העיניים, בלי מילים מפוצצות.</div>
+   </details>
+   <details class="faq-item">
+    <summary>כמה זמן זה ייקח לי? <span class="faq-q-icon">+</span></summary>
+    <div class="faq-a">הקורס קצר, בנוי משיעורים ממוקדים של עד 10 דקות, ואת מתקדמת בקצב שלך. אפשר להתחיל ולסיים תוך זמן קצר, מתי שנוח לך.</div>
+   </details>
+   <details class="faq-item">
+    <summary>צריך סכום גדול כדי להתחיל? <span class="faq-q-icon">+</span></summary>
+    <div class="faq-a">ממש לא. אפשר להתחיל גם מ-50 או 100 ש"ח בחודש. הרעיון הוא לעשות את הצעד הראשון, לא להתעשר מחר בבוקר.</div>
+   </details>
+   <details class="faq-item">
+    <summary>יש כאן ליווי אישי או מענה לשאלות? <span class="faq-q-icon">+</span></summary>
+    <div class="faq-a">זה קורס דיגיטלי עצמאי, לא ליווי אישי. הוא בדיוק בשביל מי שרוצה דרך פשוטה וברורה לצעד ראשון בעצמה. אם את מחפשת ליווי אישי צמוד, יש לי מסלול אחר.</div>
+   </details>
+   <details class="faq-item">
+    <summary>איך מקבלים גישה, ומאיפה צופים? <span class="faq-q-icon">+</span></summary>
+    <div class="faq-a">גישה מיידית לאחר הרכישה, וצופים מהמחשב או מהטלפון, מתי שנוח לך ובקצב שלך.</div>
+   </details>
+   <details class="faq-item">
+    <summary>זה קורס מתקדם למניות וקרנות סל? <span class="faq-q-icon">+</span></summary>
+    <div class="faq-a">לא. זה קורס למתחילות, שכל מטרתו הצעד הראשון. אם את כבר מנוסה ומחפשת תוכן מתקדם על שוק ההון, זה פחות מתאים לך.</div>
+   </details>
+  </div>
+ </div>
+</section>
+
+<!-- ===== OFFER + FORM (DARK) ===== -->
+<section class="offer" id="join">
+ <div class="offer-inner">
+  <div class="section-label">// כמה זה עולה לך להצטרף</div>
+  <h2>הכל, ב-<span class="gold">97 ₪ בלבד.</span></h2>
+  <p class="offer-lead">המטרה שלי היא להנגיש את הידע הזה בצורה הכי פשוטה ולא מאיימת שיש. לכן ההשקעה שלך בקורס היא פחות מארוחה בוולט, פחות מחולצה בזארה. אבל בניגוד אליהן, הפעם את קונה לעצמך הזדמנות לעשות את הצעד הראשון לעולם ההשקעות.</p>
+
+  <div class="offer-card">
+   <div class="price-row"><span class="price-num">97 ₪</span></div>
+   <div class="price-note">תשלום חד פעמי · גישה מיידית · לכל החיים</div>
+
+   <!-- טופס אמיתי: נשלח לרב מסר (רשימת מתעניינות 94567) → רב מסר מעביר לעמוד התשלום של Grow (passthrough).
+        החיווט זהה לטופס בדף ה-ravpage המקורי (form_id 205458). -->
+   <form class="lead-form" id="join-form" action="https://safe-subscriber.responder.live/" method="post" accept-charset="utf-8">
+    <input type="hidden" name="language" value="he">
+    <input type="hidden" name="fields[101027_List:94567]" value="1955ae2b8a34e533fbe068db5597d6b56A1C1EEF">
+    <input type="hidden" name="fields[101028_List:94567]" value="">
+    <input type="hidden" name="form_id" value="205458">
+    <input type="hidden" name="encoding" value="utf-8">
+    <input type="hidden" name="ravxxc" value="1955ae2b8a34e533fbe068db5597d6b56A1C1EEF:6521305_10001546">
+    <input type="hidden" name="ravxxc_passthrough_domain" value="pay.grow.link">
+    <input type="hidden" name="__ravxx_url__" value="http://richlife.ravpage.co.il/first-invest">
+    <input type="text" name="fields[13_Fixed]" placeholder="שם" maxlength="80" autocomplete="name" required>
+    <input type="email" name="fields[1_Fixed]" placeholder="מייל" maxlength="255" autocomplete="email" required>
+    <input type="tel" name="fields[2_Fixed]" placeholder="טלפון נייד" maxlength="40" autocomplete="tel" required>
+    <label class="consent"><input type="checkbox" name="confirm_registration" value="true" required><span>אני מאשרת את <a href="https://richlife.ravpage.co.il/takanon" target="_blank" rel="noopener">התקנון</a>, <a href="https://richlife.ravpage.co.il/pratiuy" target="_blank" rel="noopener">מדיניות הפרטיות</a> וקבלת דיוור מטלי שרעבי.</span></label>
+    <button type="submit" class="form-submit">כן, אני רוצה להתחיל להשקיע</button>
+   </form>
+  </div>
+
+  <p class="offer-reassure">ואם הגעת עד לכאן, את כבר יודעת שהגיע הזמן להפסיק לדחות ולהתחיל לפעול.</p>
+ </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+ <span class="footer-mark">RichLife</span>
+ <div class="footer-meta">טלי בנימינוב · ליווי פיננסי, חיסכון והשקעות<br>RichLife · כל הזכויות שמורות</div>
+</footer>
+
+<!-- ===== STICKY MOBILE CTA ===== -->
+<div class="sticky-cta">
+ <a href="#join">להצטרף לקורס · 97 ₪</a>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+   JS - מודולים אינטראקטיביים (מהקיט)
+═════════════════════════════════════════════════════════════════ -->
+<script>
+/* ===== 0. שורות טבלת לפני/אחרי ===== */
+(function styleShifts(){
+ var css = ''
+  + '.shifts-table .sc-out{padding:22px 30px 22px 40px;border-top:1px solid var(--light-border);border-left:1px solid var(--light-border);font-size:17px;line-height:1.5;color:rgba(30,43,37,.5);position:relative;}'
+  + '.shifts-table .sc-out::before{content:"−";position:absolute;right:14px;top:50%;transform:translateY(-50%);color:rgba(30,43,37,.28);font-size:18px;font-weight:700;}'
+  + '.shifts-table .sc-in{padding:22px 30px 22px 40px;border-top:1px solid var(--light-border);font-size:17px;line-height:1.5;color:var(--light-text);font-weight:700;position:relative;}'
+  + '.shifts-table .sc-in::before{content:"+";position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--orange);font-size:18px;font-weight:700;}'
+  + '@media (max-width:760px){.shifts-table .sc-out,.shifts-table .sc-in{padding:16px 30px 16px 22px;font-size:14px;}}';
+ var s = document.createElement('style'); s.textContent = css; document.head.appendChild(s);
+})();
+
+/* ===== 1. SCROLL PROGRESS BAR ===== */
+(function() {
+ const bar = document.getElementById('scroll-progress');
+ function updateBar() {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const docH = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const pct = docH > 0 ? (scrollTop / docH) * 100 : 0;
+  bar.style.width = pct + '%';
+ }
+ window.addEventListener('scroll', updateBar, { passive: true });
+ updateBar();
+})();
+
+/* ===== 2. TYPEWRITER on .sub-promise ===== */
+(function() {
+ const el = document.getElementById('sub-promise-el');
+ if (!el) return;
+ const fullHTML = 'קורס דיגיטלי קצר ופשוט שמראה לך <strong>צעד אחר צעד איך להתחיל להשקיע</strong>, בלי לפחד לשים כסף במקום הלא נכון, ו<span class="warm">בלי להרגיש שאת צריכה להיות מומחית</span>.';
+
+ function tokenize(html) {
+  const tokens = []; let i = 0;
+  while (i < html.length) {
+   if (html[i] === '<') {
+    let j = html.indexOf('>', i);
+    if (j === -1) j = html.length - 1;
+    tokens.push({ type: 'tag', value: html.slice(i, j + 1) });
+    i = j + 1;
+   } else {
+    let j = html.indexOf('<', i);
+    if (j === -1) j = html.length;
+    tokens.push({ type: 'text', value: html.slice(i, j) });
+    i = j;
+   }
+  }
+  return tokens;
+ }
+
+ const tokens = tokenize(fullHTML);
+ let rendered = '', tokenIdx = 0, charIdx = 0, cursorEl = null;
+
+ function renderCursor() {
+  if (cursorEl) cursorEl.remove();
+  cursorEl = document.createElement('span');
+  cursorEl.className = 'tw-cursor';
+  cursorEl.style.height = '1em';
+  el.appendChild(cursorEl);
+ }
+
+ function step() {
+  if (tokenIdx >= tokens.length) {
+   setTimeout(() => { if (cursorEl) cursorEl.remove(); }, 1500);
+   return;
+  }
+  const tok = tokens[tokenIdx];
+  if (tok.type === 'tag') {
+   rendered += tok.value;
+   tokenIdx++; charIdx = 0;
+   el.innerHTML = rendered; renderCursor();
+   setTimeout(step, 8);
+  } else {
+   if (charIdx < tok.value.length) {
+    rendered += tok.value[charIdx];
+    charIdx++;
+    el.innerHTML = rendered; renderCursor();
+    setTimeout(step, 22);
+   } else {
+    tokenIdx++; charIdx = 0;
+    setTimeout(step, 8);
+   }
+  }
+ }
+
+ setTimeout(step, 1200);
+})();
+
+/* ===== 3. SCROLL WORD HIGHLIGHT in .story paragraphs ===== */
+(function() {
+ const storySection = document.getElementById('story-section');
+ if (!storySection) return;
+ const paragraphs = storySection.querySelectorAll('p');
+ paragraphs.forEach(p => {
+  function wrapTextNode(textNode) {
+   const words = textNode.textContent.split(/(\s+)/);
+   const frag = document.createDocumentFragment();
+   words.forEach(part => {
+    if (/^\s+$/.test(part) || part === '') {
+     frag.appendChild(document.createTextNode(part));
+    } else {
+     const span = document.createElement('span');
+     span.className = 'hl-word';
+     span.textContent = part;
+     frag.appendChild(span);
+    }
+   });
+   textNode.parentNode.replaceChild(frag, textNode);
+  }
+  function wrapNode(node) {
+   if (node.nodeType === Node.TEXT_NODE) {
+    if (node.textContent.trim()) wrapTextNode(node);
+   } else if (node.nodeType === Node.ELEMENT_NODE) {
+    Array.from(node.childNodes).forEach(child => wrapNode(child));
+   }
+  }
+  wrapNode(p);
+ });
+
+ const allWords = Array.from(storySection.querySelectorAll('.hl-word'));
+ function updateHighlight() {
+  const vh = window.innerHeight;
+  allWords.forEach(span => {
+   const rect = span.getBoundingClientRect();
+   const center = rect.top + rect.height / 2;
+   if (center < vh * 0.82) span.classList.add('lit');
+   else span.classList.remove('lit');
+  });
+ }
+ window.addEventListener('scroll', updateHighlight, { passive: true });
+ updateHighlight();
+})();
+
+/* ===== 4. COUNT-UP on STATS ===== */
+(function initCountUp() {
+ const statsInner = document.querySelector('.stats-inner');
+ if (!statsInner || !('IntersectionObserver' in window)) return;
+ let triggered = false;
+ function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+ function animateCount(el, target, duration) {
+  let start = null;
+  function step(ts) {
+   if (!start) start = ts;
+   const p = Math.min((ts - start) / duration, 1);
+   el.textContent = Math.round(easeOutCubic(p) * target);
+   if (p < 1) requestAnimationFrame(step); else el.textContent = target;
+  }
+  requestAnimationFrame(step);
+ }
+ const obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+   if (entry.isIntersecting && !triggered) {
+    triggered = true; obs.disconnect();
+    statsInner.querySelectorAll('.stat-item').forEach(function(item) {
+     const numEl = item.querySelector('.stat-num');
+     if (!numEl) return;
+     const target = parseInt(numEl.getAttribute('data-target'), 10);
+     const countEl = numEl.querySelector('.stat-countup');
+     if (countEl && !isNaN(target)) animateCount(countEl, target, 1400);
+    });
+   }
+  });
+ }, { threshold: 0.3 });
+ obs.observe(statsInner);
+})();
+
+/* ===== 5. FADEUP STAGGER ===== */
+(function initFadeUp() {
+ if (!('IntersectionObserver' in window)) {
+  document.querySelectorAll('.fadeup-ready').forEach(function(el) {
+   el.style.opacity = '1'; el.style.transform = 'none';
+  });
+  return;
+ }
+ const obs = new IntersectionObserver(function(entries, o) {
+  entries.forEach(function(entry) {
+   if (entry.isIntersecting) {
+    const el = entry.target;
+    el.style.animationDelay = el.style.getPropertyValue('--delay') || '0s';
+    el.classList.add('fadeup-done');
+    o.unobserve(el);
+   }
+  });
+ }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+ document.querySelectorAll('.fadeup-ready').forEach(function(el) { obs.observe(el); });
+})();
+
+/* ===== 6. CURSOR GLOW (dark sections only) ===== */
+(function initCursorGlow() {
+ const glow = document.getElementById('cursor-glow');
+ if (!glow) return;
+ const darkSelectors = ['.hero', '.stats', '.story', '.how', '.bonuses', '.mid-cta', '.objection', '.offer', '.site-footer'];
+ const darkEls = darkSelectors.map(s => document.querySelector(s)).filter(Boolean);
+ let gx = 0, gy = 0, tx = 0, ty = 0, active = false, rafId = null;
+ function isOverDark(x, y) {
+  return darkEls.some(function(el) {
+   const r = el.getBoundingClientRect();
+   return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+  });
+ }
+ function lerp() {
+  gx += (tx - gx) * 0.12; gy += (ty - gy) * 0.12;
+  glow.style.left = gx + 'px'; glow.style.top = gy + 'px';
+  rafId = requestAnimationFrame(lerp);
+ }
+ document.addEventListener('mousemove', function(e) {
+  tx = e.clientX; ty = e.clientY;
+  const over = isOverDark(e.clientX, e.clientY);
+  if (over && !active) {
+   active = true;
+   glow.classList.add('visible');
+   gx = tx; gy = ty;
+   glow.style.left = gx + 'px'; glow.style.top = gy + 'px';
+   if (!rafId) rafId = requestAnimationFrame(lerp);
+  } else if (!over && active) {
+   active = false;
+   glow.classList.remove('visible');
+   if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+  }
+ });
+})();
+
+/* ===== 7. FORM - שליחה אמיתית לרב מסר (רשימה 94567) → מעבר אוטומטי ל-Grow.
+   הטופס נשלח בניווט מלא (native POST); כאן רק מגינים מלחיצה כפולה. ===== */
+(function initForm() {
+ const form = document.getElementById('join-form');
+ if (!form) return;
+ form.addEventListener('submit', function() {
+  const btn = form.querySelector('.form-submit');
+  if (btn) { btn.disabled = true; btn.textContent = 'רק רגע, מעבירים אותך לתשלום...'; }
+ });
+})();
+</script>
+
+</body>
+</html>
