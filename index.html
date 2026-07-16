@@ -778,9 +778,9 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
     <input type="hidden" name="ravxxc" value="1955ae2b8a34e533fbe068db5597d6b56A1C1EEF:6521305_10001546">
     <input type="hidden" name="ravxxc_passthrough_domain" value="pay.grow.link">
     <input type="hidden" name="__ravxx_url__" value="http://richlife.ravpage.co.il/first-invest">
-    <input type="text" name="fields[13_Fixed]" placeholder="שם" maxlength="80" autocomplete="name" required>
-    <input type="email" name="fields[1_Fixed]" placeholder="מייל" maxlength="255" autocomplete="email" required>
-    <input type="tel" name="fields[2_Fixed]" placeholder="טלפון נייד" maxlength="40" autocomplete="tel" required>
+    <input type="text" name="fields[13_Fixed]" id="f-name" placeholder="שם" maxlength="80" autocomplete="name" required>
+    <input type="email" name="fields[1_Fixed]" id="f-email" placeholder="מייל" maxlength="255" autocomplete="email" pattern="[^@\s]+@[^@\s]+\.[A-Za-z]{2,}" required>
+    <input type="tel" name="fields[2_Fixed]" id="f-phone" placeholder="טלפון נייד" maxlength="40" autocomplete="tel" inputmode="tel" pattern="(\+?972[\- ]?|0)5[0-9][\- ]?[0-9]{3}[\- ]?[0-9]{4}" required>
     <label class="consent"><input type="checkbox" name="confirm_registration" value="true" required><span>אני מאשרת את <a href="https://richlife.ravpage.co.il/takanon" target="_blank" rel="noopener">התקנון</a>, <a href="https://richlife.ravpage.co.il/pratiuy" target="_blank" rel="noopener">מדיניות הפרטיות</a> וקבלת דיוור מטלי שרעבי.</span></label>
     <button type="submit" class="form-submit">כן, אני רוצה להתחיל להשקיע</button>
    </form>
@@ -1119,6 +1119,20 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 (function initForm() {
  const form = document.getElementById('join-form');
  if (!form) return;
+ /* ולידציה עם הודעות בעברית: מייל חייב סיומת אמיתית, נייד חייב להיות ישראלי (05X) */
+ const messages = {
+  'f-name': 'רגע, איך קוראים לך? 🙂',
+  'f-email': 'כתובת המייל לא נראית תקינה - שווה לבדוק אותה שוב',
+  'f-phone': 'המספר לא נראה כמו נייד ישראלי - צריך מספר שמתחיל ב-05'
+ };
+ form.querySelectorAll('input').forEach(function(inp) {
+  inp.addEventListener('invalid', function() {
+   if (inp.type === 'checkbox') { inp.setCustomValidity('צריך לאשר את התקנון כדי להמשיך'); return; }
+   if (messages[inp.id]) inp.setCustomValidity(inp.value ? messages[inp.id] : (inp.id === 'f-name' ? messages[inp.id] : 'השדה הזה חובה'));
+  });
+  inp.addEventListener('input', function() { inp.setCustomValidity(''); });
+  if (inp.type === 'checkbox') inp.addEventListener('change', function() { inp.setCustomValidity(''); });
+ });
  form.addEventListener('submit', function() {
   if (typeof fbq === 'function') { try { fbq('track', 'Lead'); } catch (e) {} }
   const btn = form.querySelector('.form-submit');
