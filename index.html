@@ -15,6 +15,18 @@
 <meta name="theme-color" content="#e9f1f2">
 <title>להשקיע לראשונה בקלות · קורס דיגיטלי · RichLife</title>
 <meta name="description" content="קורס דיגיטלי קצר ופשוט של טלי בנימינוב (RichLife) שמראה לך צעד אחר צעד איך לעשות את ההשקעה הראשונה שלך, בלי להסתבך ובלי לפחד.">
+<!-- Meta Pixel (RichLife 208911198828875) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '208911198828875');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=208911198828875&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap');
 
@@ -1081,11 +1093,13 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
  });
 })();
 
-/* ===== 8. FORM - שליחה אמיתית לרב מסר (רשימה 94567) → מעבר אוטומטי ל-Grow ===== */
+/* ===== 8. FORM - שליחה אמיתית לרב מסר (רשימה 94567 "להשקיע לראשונה בקלות - מתעניינים") → מעבר אוטומטי ל-Grow.
+   בשליחה נורה גם אירוע Lead לפיקסל של מטא. ===== */
 (function initForm() {
  const form = document.getElementById('join-form');
  if (!form) return;
  form.addEventListener('submit', function() {
+  if (typeof fbq === 'function') { try { fbq('track', 'Lead'); } catch (e) {} }
   const btn = form.querySelector('.form-submit');
   if (btn) { btn.disabled = true; btn.textContent = 'רק רגע, מעבירים אותך לתשלום...'; }
  });
