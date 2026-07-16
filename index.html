@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <!-- ════════════════════════════════════════════════════════════════
-   RichLife · דף מכר לקורס "להשקיע לראשונה בקלות" · v2 בהיר
-   פלטה: קרם-מרווה בהיר (כמו מוכנים-ללידה/מעטפת) + 3 סקשני ירוק-אורן כהה
-   (סטטיסטיקות, בונוסים, מחיר+טופס). כל מערכת התנועה של הקיט נשמרה.
-   תמונות אמיתיות מהדף הישן: images/ (hero-cover, course-mockup,
-   whatsapp-testimonial, tali-portrait, contracts-collage, travels-collage).
-   ⚠️ אל תשנו את חיווט הטופס (action + fields + hidden) - זה החיבור החי לרב מסר.
+   RichLife · דף מכר לקורס "להשקיע לראשונה בקלות" · v3
+   הערות טלי 16.7.26: בלי זהב (ירוק/מרווה + טרקוטה ל"לא" בלבד) · בלי מחיר
+   עד סקשן המחיר (פס המספרים נמחק) · הדגשות בסיפור · חץ הזמנה ·
+   מסע 5 שלבים אנכי עם קו התקדמות · טבלת היום/אחרי ב"מה יקרה לך אחרי" ·
+   התנגדות בשורות קצרות · סדר סוף: מחיר+טופס → ביו → שאלות.
+   ⚠️ אל תשנו את חיווט הטופס (action + fields + hidden) - חיבור חי לרב מסר.
 ═════════════════════════════════════════════════════════════════ -->
 <html lang="he" dir="rtl">
 <head>
@@ -14,13 +14,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#e9f1f2">
 <title>להשקיע לראשונה בקלות · קורס דיגיטלי · RichLife</title>
-<meta name="description" content="קורס דיגיטלי קצר ופשוט של טלי בנימינוב (RichLife) שמראה לך צעד אחר צעד איך לעשות את ההשקעה הראשונה שלך, בלי להסתבך ובלי לפחד. 97 ₪, גישה מיידית.">
+<meta name="description" content="קורס דיגיטלי קצר ופשוט של טלי בנימינוב (RichLife) שמראה לך צעד אחר צעד איך לעשות את ההשקעה הראשונה שלך, בלי להסתבך ובלי לפחד.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap');
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* ===== טוקנים - הפלטה הבהירה של RichLife (מרווה/אורן/זהב) ===== */
+/* ===== טוקנים - הפלטה הבהירה של RichLife (בלי זהב; טרקוטה רק לשליליים) ===== */
 :root {
   --font: 'Heebo', system-ui, sans-serif;
   --paper: #e9f1f2;
@@ -33,8 +33,7 @@
   --pine-deep: #3e5448;
   --pine-darker: #2f4036;
   --sage: #bcd3bf;        --sage-rgb: 188,211,191;
-  --gold: #c99a5f;        --gold-rgb: 201,154,95;
-  --gold-soft: #d9b48a;
+  --red: #c1553f;         --red-rgb: 193,85,63;
   --on-dark: #eef4ef;
   --on-dark-soft: rgba(238,244,239,.75);
 }
@@ -43,14 +42,14 @@ html { scroll-behavior: smooth; }
 body { font-family: var(--font); background: var(--paper); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
 /* ===== SCROLL PROGRESS BAR ===== */
-#scroll-progress { position: fixed; top: 0; left: 0; z-index: 999; height: 3px; width: 0%; background: linear-gradient(90deg, var(--pine), var(--gold-soft)); transition: width .05s linear; pointer-events: none; }
+#scroll-progress { position: fixed; top: 0; left: 0; z-index: 999; height: 3px; width: 0%; background: linear-gradient(90deg, var(--pine-deep), var(--sage)); transition: width .05s linear; pointer-events: none; }
 
-/* ===== SCENE - רקע בהיר אוורירי: כתמי מרווה/זהב רכים + טבעת אחת ===== */
+/* ===== SCENE - רקע בהיר אוורירי ===== */
 .scene { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
 .blob { position: absolute; border-radius: 50%; filter: blur(70px); }
 .blob-a { top: -12%; right: -14%; width: 760px; height: 760px; background: radial-gradient(ellipse at center, rgba(var(--sage-rgb),.55) 0%, rgba(var(--sage-rgb),.18) 45%, transparent 70%); animation: fl-a 14s ease-in-out infinite; }
-.blob-b { top: 30%; left: -16%; width: 700px; height: 700px; background: radial-gradient(ellipse at center, rgba(var(--pine-rgb),.20) 0%, rgba(var(--pine-rgb),.07) 45%, transparent 70%); animation: fl-b 18s ease-in-out infinite; }
-.blob-c { bottom: -14%; right: 20%; width: 620px; height: 620px; background: radial-gradient(ellipse at center, rgba(var(--gold-rgb),.16) 0%, rgba(var(--gold-rgb),.05) 50%, transparent 72%); animation: fl-c 22s ease-in-out infinite; }
+.blob-b { top: 30%; left: -16%; width: 700px; height: 700px; background: radial-gradient(ellipse at center, rgba(var(--pine-rgb),.2) 0%, rgba(var(--pine-rgb),.07) 45%, transparent 70%); animation: fl-b 18s ease-in-out infinite; }
+.blob-c { bottom: -14%; right: 20%; width: 620px; height: 620px; background: radial-gradient(ellipse at center, rgba(var(--sage-rgb),.35) 0%, rgba(var(--sage-rgb),.1) 50%, transparent 72%); animation: fl-c 22s ease-in-out infinite; }
 @keyframes fl-a { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-40px,50px) scale(1.07)} }
 @keyframes fl-b { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(50px,30px) scale(1.08)} }
 @keyframes fl-c { 0%,100%{transform:translate(0,0)} 33%{transform:translate(-20px,-30px)} 66%{transform:translate(15px,10px)} }
@@ -59,7 +58,7 @@ body { font-family: var(--font); background: var(--paper); color: var(--ink); ov
 @keyframes spin-fwd { from{transform:translate(-50%,-50%) rotate(0deg)} to{transform:translate(-50%,-50%) rotate(360deg)} }
 .scene-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(var(--pine-rgb),.05) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--pine-rgb),.05) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse 75% 55% at 50% 34%, black 0%, transparent 100%); }
 
-/* ===== NAV - בהיר חלבי ===== */
+/* ===== NAV ===== */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 90; height: 66px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; backdrop-filter: blur(22px) saturate(150%); background: rgba(238,244,239,.88); border-bottom: 1px solid var(--line); }
 .nav-left { display: flex; align-items: center; gap: 16px; }
 .brand-mark { font-weight: 900; font-size: 20px; letter-spacing: .06em; color: var(--pine-deep); }
@@ -74,18 +73,18 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 90; height: 66px; pad
 .nav-cta { background: linear-gradient(120deg, var(--pine-deep) 0%, var(--pine) 100%); color: #fff; font-weight: 700; font-size: 14px; padding: 12px 28px; border-radius: 100px; text-decoration: none; letter-spacing: .03em; box-shadow: 0 4px 22px rgba(var(--pine-rgb),.35); transition: all .25s; }
 .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 32px rgba(var(--pine-rgb),.5); }
 
-/* ===== HERO - בהיר, טקסט + תמונת השער ===== */
+/* ===== HERO ===== */
 .hero { position: relative; z-index: 1; min-height: 100vh; display: flex; align-items: center; padding: 150px 32px 70px; overflow: hidden; }
 .hero-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr .9fr; gap: 54px; align-items: center; position: relative; z-index: 3; }
 .hero-copy { text-align: right; }
 .pre-head { display: inline-flex; align-items: center; gap: 10px; background: rgba(var(--pine-rgb),.08); border: 1px solid rgba(var(--pine-rgb),.28); border-radius: 100px; padding: 10px 22px; font-size: 13px; font-weight: 500; letter-spacing: .02em; color: var(--pine-deep); margin-bottom: 30px; backdrop-filter: blur(8px); }
 .pre-dot { width:7px; height:7px; border-radius:50%; background:var(--pine); animation:blink 2s ease infinite; }
 h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height: 1.22; letter-spacing: -.018em; margin-bottom: 20px; text-wrap: balance; color: var(--ink); }
-.h1-warm { background: linear-gradient(120deg, var(--pine-deep) 0%, var(--pine) 60%, var(--gold) 130%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline; }
+.h1-warm { background: linear-gradient(120deg, var(--pine-deep) 0%, var(--pine) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline; }
 .bli-chips { display: inline-flex; gap: 10px; flex-wrap: wrap; margin: 20px 0 26px; }
 .bli-chip { display: inline-flex; align-items: center; gap: 9px; padding: 10px 20px; border-radius: 100px; background: #fff; border: 1px solid rgba(var(--pine-rgb),.3); font-weight: 700; font-size: clamp(13px, 1.3vw, 15px); color: var(--ink); box-shadow: 0 4px 16px rgba(30,43,37,.06); transition: all .25s; }
 .bli-chip:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(var(--pine-rgb),.18); border-color: rgba(var(--pine-rgb),.5); }
-.bli-chip-x { width: 18px; height: 18px; border-radius: 50%; background: rgba(var(--pine-rgb),.14); color: var(--pine-deep); display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; }
+.bli-chip-x { width: 18px; height: 18px; border-radius: 50%; background: rgba(var(--red-rgb),.12); color: var(--red); display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; }
 .sub-promise { font-size: clamp(17px,2vw,21px); font-weight: 400; line-height: 1.75; color: var(--ink-soft); margin-bottom: 28px; min-height: 4.5em; }
 .sub-promise strong { color: var(--ink); font-weight: 700; }
 .sub-promise .warm { color: var(--pine-deep); font-weight: 700; }
@@ -98,7 +97,6 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 .cta-primary:hover { transform: translateY(-3px) scale(1.015); box-shadow: 0 16px 44px rgba(var(--pine-rgb),.55); }
 .cta-secondary { color: var(--ink-soft); font-size: 15px; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; padding: 20px 24px; border: 1px solid rgba(30,43,37,.14); border-radius: 14px; transition: all .25s; background: rgba(255,255,255,.55); }
 .cta-secondary:hover { border-color: rgba(var(--pine-rgb),.45); color: var(--pine-deep); }
-.scarcity { margin-top: 20px; font-size: 13.5px; letter-spacing: .03em; color: var(--gold); font-weight: 700; }
 .hero-visual { position: relative; }
 .hero-img-card { border-radius: 26px; overflow: hidden; box-shadow: 0 34px 80px rgba(62,84,72,.28), 0 6px 20px rgba(62,84,72,.12); border: 6px solid #fff; transform: rotate(-1.5deg); animation: hero-float 7s ease-in-out infinite; transition: transform .4s; }
 .hero-img-card:hover { transform: rotate(0deg) scale(1.02); }
@@ -106,27 +104,17 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 .hero-img-card img { display: block; width: 100%; height: auto; }
 .hero-badge { position: absolute; bottom: -18px; right: -10px; background: linear-gradient(120deg, var(--pine-deep), var(--pine)); color: #fff; font-weight: 800; font-size: 14.5px; padding: 12px 22px; border-radius: 100px; box-shadow: 0 10px 30px rgba(var(--pine-rgb),.4); animation: hero-float 7s ease-in-out infinite reverse; }
 
-/* ===== STATS - סקשן כהה 1 (ירוק-אורן עמוק) ===== */
-.stats { position: relative; z-index: 2; background: linear-gradient(150deg, var(--pine-darker) 0%, var(--pine-deep) 75%); overflow: hidden; }
-.stats::before { content: ''; position: absolute; top: -160px; left: -80px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(ellipse, rgba(var(--sage-rgb),.16), transparent 65%); filter: blur(50px); pointer-events: none; }
-.stats-inner { display: grid; grid-template-columns: repeat(4,1fr); max-width: 1120px; margin: 0 auto; position: relative; }
-.stat-item { padding: 56px 40px; text-align: center; position: relative; transition: background .3s; }
-.stat-item:hover { background: rgba(255,255,255,.04); }
-.stat-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 54px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,.16), transparent); }
-.stat-num { font-weight: 900; font-size: clamp(50px,5.4vw,72px); line-height: 1; letter-spacing: -.04em; color: #fff; }
-.stat-suffix { font-size: .42em; font-weight: 400; color: var(--gold-soft); vertical-align: super; }
-.stat-label { font-size: 14px; font-weight: 400; color: var(--on-dark-soft); margin-top: 12px; letter-spacing: .05em; }
-
-/* ===== STORY / PROBLEM - בהיר ===== */
-.story { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 106px 48px; }
-.section-label { font-size: 11px; letter-spacing: .2em; color: var(--gold); font-weight: 700; margin-bottom: 26px; }
+/* ===== STORY / PROBLEM ===== */
+.story { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 100px 48px 70px; }
+.section-label { font-size: 11px; letter-spacing: .2em; color: var(--pine); font-weight: 700; margin-bottom: 26px; }
 .story h2 { font-weight: 900; font-size: clamp(30px,3.9vw,50px); line-height: 1.12; letter-spacing: -.025em; color: var(--ink); margin-bottom: 40px; }
 .story h2 .gold { background: linear-gradient(120deg, var(--pine-deep), var(--pine)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .story p { font-size: clamp(17px,1.9vw,20px); font-weight: 400; line-height: 1.85; margin-bottom: 24px; color: var(--ink-soft); }
 .hl-word { color: rgba(30,43,37,.24); transition: color .25s ease; }
 .hl-word.lit { color: rgba(30,43,37,.92); }
-.story p strong { font-weight: 700; color: var(--ink); }
-.story p em { color: var(--pine-deep); font-style: normal; font-weight: 700; }
+.story p strong { font-weight: 800; color: var(--ink); }
+.story p em { color: var(--pine-deep); font-style: normal; font-weight: 800; }
+.story p .neg { color: var(--red); font-style: normal; font-weight: 800; }
 .story-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin: 38px 0; }
 .story-list li { display: flex; align-items: center; gap: 16px; font-size: clamp(15.5px,1.8vw,19px); line-height: 1.6; color: var(--ink); padding: 18px 22px; background: #fff; border: 1px solid var(--line); border-radius: 14px; transition: all .3s; box-shadow: 0 4px 14px rgba(30,43,37,.04); }
 .story-list li:hover { border-color: rgba(var(--pine-rgb),.4); transform: translateX(-4px); box-shadow: 0 10px 26px rgba(var(--pine-rgb),.14); }
@@ -136,55 +124,67 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 .quote-text { font-size: clamp(18px,2vw,23px); font-weight: 700; line-height: 1.55; color: var(--ink); margin-bottom: 14px; font-style: italic; }
 .quote-attr { font-size: 13px; font-weight: 500; letter-spacing: .08em; color: var(--pine-deep); }
 
+/* ===== חץ הזמנה ===== */
+.scroll-invite { text-align: center; padding: 26px 20px 60px; position: relative; z-index: 1; }
+.scroll-invite .si-text { font-weight: 900; font-size: clamp(20px,2.5vw,29px); color: var(--pine-deep); margin-bottom: 10px; }
+.scroll-invite a { display: inline-flex; flex-direction: column; align-items: center; text-decoration: none; color: var(--pine); font-size: 34px; line-height: .7; animation: bounce-down 1.8s ease-in-out infinite; }
+@keyframes bounce-down { 0%,100%{transform:translateY(0);opacity:.9} 50%{transform:translateY(10px);opacity:.5} }
+
 /* ===== LIGHT SECTION wrapper ===== */
 .light-section { position: relative; z-index: 1; }
 .light-section.alt { background: linear-gradient(180deg, var(--sage-tint) 0%, var(--paper) 100%); }
 .light-section.white { background: #fff; }
 .light-wrap { max-width: 1180px; margin: 0 auto; padding: 104px 48px; }
 .light-wrap.narrow { max-width: 920px; }
-.light-eyebrow { font-size: 11px; letter-spacing: .22em; font-weight: 700; color: var(--gold); margin-bottom: 22px; }
+.light-eyebrow { font-size: 11px; letter-spacing: .22em; font-weight: 700; color: var(--pine); margin-bottom: 22px; }
 .light-h2 { font-weight: 900; font-size: clamp(30px,4vw,52px); line-height: 1.1; letter-spacing: -.025em; color: var(--ink); margin-bottom: 24px; }
 .light-h2 .orange { color: var(--pine); }
-.light-intro { font-size: clamp(16.5px,1.8vw,20px); font-weight: 400; line-height: 1.78; color: var(--ink-soft); max-width: 800px; margin-bottom: 52px; }
+.light-intro { font-size: clamp(16.5px,1.8vw,20px); font-weight: 400; line-height: 1.82; color: var(--ink-soft); max-width: 800px; margin-bottom: 52px; }
 .light-intro strong { color: var(--ink); font-weight: 700; }
+.light-intro .neg { color: var(--red); font-weight: 800; }
+.light-intro .pos { color: var(--pine-deep); font-weight: 800; }
 
-/* ===== SHIFTS TABLE (לפני/אחרי) ===== */
+/* ===== SHIFTS TABLE ===== */
 .shifts-table { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; background: #fff; box-shadow: 0 26px 60px rgba(62,84,72,.1); }
 .sh-head { padding: 22px 30px; font-size: 12px; letter-spacing: .14em; font-weight: 700; }
-.sh-head.out { background: rgba(30,43,37,.04); color: rgba(30,43,37,.5); border-left: 1px solid var(--line); }
+.sh-head.out { background: rgba(var(--red-rgb),.06); color: var(--red); border-left: 1px solid var(--line); }
 .sh-head.in { background: linear-gradient(135deg, rgba(var(--pine-rgb),.14), rgba(var(--sage-rgb),.2)); color: var(--pine-deep); }
 .sc-out { padding: 22px 40px 22px 26px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); font-size: 17px; line-height: 1.5; color: rgba(30,43,37,.48); position: relative; }
-.sc-out::before { content: "−"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: rgba(30,43,37,.3); font-size: 18px; font-weight: 700; }
+.sc-out::before { content: "−"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: rgba(var(--red-rgb),.6); font-size: 18px; font-weight: 700; }
 .sc-in { padding: 22px 40px 22px 26px; border-top: 1px solid var(--line); font-size: 17px; line-height: 1.5; color: var(--ink); font-weight: 700; position: relative; }
 .sc-in::before { content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--pine); font-size: 18px; font-weight: 700; }
+.shifts-title { font-weight: 900; font-size: clamp(21px,2.4vw,28px); color: var(--ink); margin: 54px 0 20px; }
 
-/* ===== HOW - 5 שלבים (בהיר) ===== */
-.how { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 104px 48px; }
+/* ===== JOURNEY - מסע 5 השלבים ===== */
+.how { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 104px 48px; }
 .how h2 { font-weight: 900; font-size: clamp(28px,3.7vw,48px); line-height: 1.14; letter-spacing: -.025em; color: var(--ink); margin-bottom: 16px; }
 .how h2 .gold { background: linear-gradient(120deg, var(--pine-deep), var(--pine)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.how-intro { font-size: clamp(16px,1.8vw,19px); line-height: 1.7; color: var(--ink-soft); max-width: 740px; margin-bottom: 46px; }
-.stage-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-.stage-card { padding: 38px 28px 32px; background: #fff; border: 1px solid var(--line); border-radius: 22px; position: relative; overflow: hidden; transition: all .35s; box-shadow: 0 6px 18px rgba(30,43,37,.05); }
-.stage-card:hover { border-color: rgba(var(--pine-rgb),.45); transform: translateY(-5px); box-shadow: 0 26px 50px rgba(62,84,72,.16); }
-.stage-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--pine), var(--gold-soft)); opacity: 0; transition: opacity .35s; }
-.stage-card:hover::before { opacity: 1; }
-.stage-num { font-weight: 900; font-size: 64px; line-height: .9; letter-spacing: -.04em; color: transparent; -webkit-text-stroke: 1.4px rgba(var(--pine-rgb),.35); position: absolute; top: 16px; left: 22px; pointer-events: none; }
-.stage-tag { display: inline-block; font-size: 10px; letter-spacing: .18em; font-weight: 700; color: var(--gold); margin-bottom: 14px; }
-.stage-h3 { font-weight: 800; font-size: 21px; color: var(--ink); margin-bottom: 11px; line-height: 1.3; letter-spacing: -.01em; }
-.stage-text { font-size: 15px; line-height: 1.7; color: var(--ink-soft); }
-.stage-emoji { font-size: 30px; margin-bottom: 12px; display: block; }
+.how-intro { font-size: clamp(16px,1.8vw,19px); line-height: 1.7; color: var(--ink-soft); max-width: 740px; margin-bottom: 52px; }
+.journey { position: relative; padding-right: 58px; }
+.journey-track { position: absolute; top: 8px; bottom: 8px; right: 21px; width: 3px; background: var(--line); border-radius: 3px; }
+.journey-fill { position: absolute; top: 0; right: 0; width: 100%; height: 0; background: linear-gradient(180deg, var(--pine-deep), var(--pine)); border-radius: 3px; transition: height .2s ease-out; }
+.j-step { position: relative; margin-bottom: 26px; }
+.j-step:last-child { margin-bottom: 0; }
+.j-node { position: absolute; top: 26px; right: -58px; width: 46px; height: 46px; border-radius: 50%; background: #fff; border: 3px solid var(--line); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px; color: var(--ink-soft); transition: all .4s; z-index: 2; }
+.j-step.lit .j-node { background: linear-gradient(135deg, var(--pine-deep), var(--pine)); border-color: var(--pine); color: #fff; box-shadow: 0 6px 20px rgba(var(--pine-rgb),.45); transform: scale(1.06); }
+.j-card { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 32px 30px 28px; box-shadow: 0 6px 18px rgba(30,43,37,.05); transition: all .45s; opacity: .45; transform: translateX(14px); }
+.j-step.lit .j-card { opacity: 1; transform: translateX(0); border-color: rgba(var(--pine-rgb),.4); box-shadow: 0 20px 44px rgba(62,84,72,.13); }
+.j-emoji { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 14px; background: linear-gradient(135deg, rgba(var(--pine-rgb),.13), rgba(var(--sage-rgb),.32)); border: 1px solid rgba(var(--pine-rgb),.22); font-size: 24px; margin-bottom: 14px; }
+.j-tag { display: inline-block; font-size: 10px; letter-spacing: .18em; font-weight: 700; color: var(--pine); margin-bottom: 8px; margin-right: 12px; }
+.j-h3 { font-weight: 800; font-size: clamp(19px,2vw,23px); color: var(--ink); margin-bottom: 10px; line-height: 1.3; }
+.j-text { font-size: clamp(14.5px,1.6vw,16.5px); line-height: 1.72; color: var(--ink-soft); }
 
-/* ===== OUTCOMES (בהיר alt) ===== */
+/* ===== OUTCOMES ===== */
 .does-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
 .does-card { padding: 32px 28px; background: #fff; border: 1px solid var(--line); border-radius: 20px; transition: all .35s; box-shadow: 0 5px 18px rgba(30,43,37,.05); position: relative; overflow: hidden; }
 .does-card:hover { border-color: rgba(var(--pine-rgb),.4); transform: translateY(-4px); box-shadow: 0 22px 46px rgba(62,84,72,.13); }
-.does-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--pine), var(--gold-soft)); opacity: 0; transition: opacity .35s; }
+.does-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--pine-deep), var(--sage)); opacity: 0; transition: opacity .35s; }
 .does-card:hover::before { opacity: 1; }
 .does-emoji { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 14px; background: linear-gradient(135deg, rgba(var(--pine-rgb),.13), rgba(var(--sage-rgb),.3)); border: 1px solid rgba(var(--pine-rgb),.2); font-size: 23px; margin-bottom: 16px; }
 .does-h3 { font-weight: 800; font-size: 18.5px; color: var(--ink); margin-bottom: 9px; }
 .does-text { font-size: clamp(14.5px,1.5vw,16px); line-height: 1.68; color: var(--ink-soft); }
 
-/* ===== SOCIAL PROOF - צילום וואטסאפ אמיתי ===== */
+/* ===== SOCIAL PROOF ===== */
 .wa-proof { display: grid; grid-template-columns: .9fr 1.1fr; gap: 50px; align-items: center; }
 .wa-frame { background: #fff; border-radius: 26px; padding: 16px; box-shadow: 0 30px 70px rgba(62,84,72,.18); border: 1px solid var(--line); transform: rotate(1.2deg); transition: transform .4s; max-width: 420px; justify-self: center; }
 .wa-frame:hover { transform: rotate(0deg) scale(1.02); }
@@ -195,27 +195,23 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 .wa-side p { font-size: clamp(16px,1.8vw,19px); line-height: 1.8; color: var(--ink-soft); margin-bottom: 16px; }
 .wa-side p strong { color: var(--ink); }
 
-/* ===== BONUSES - סקשן כהה 2 ===== */
+/* ===== BONUSES - כהה ===== */
 .bonuses { position: relative; z-index: 2; background: linear-gradient(160deg, var(--pine-deep) 0%, var(--pine-darker) 80%); overflow: hidden; }
-.bonuses::before { content: ''; position: absolute; top: -180px; right: -120px; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(ellipse, rgba(var(--gold-rgb),.16), transparent 62%); filter: blur(55px); pointer-events: none; }
+.bonuses::before { content: ''; position: absolute; top: -180px; right: -120px; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(ellipse, rgba(var(--sage-rgb),.18), transparent 62%); filter: blur(55px); pointer-events: none; }
 .bonuses-wrap { max-width: 1200px; margin: 0 auto; padding: 104px 48px; position: relative; }
-.bonuses .section-label { color: var(--gold-soft); }
+.bonuses .section-label { color: var(--sage); }
 .bonuses h2 { font-weight: 900; font-size: clamp(28px,3.7vw,48px); line-height: 1.14; letter-spacing: -.025em; color: #fff; margin-bottom: 16px; }
-.bonuses h2 .gold { background: linear-gradient(120deg, var(--gold-soft), var(--sage)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.bonuses h2 .gold { background: linear-gradient(120deg, var(--sage), #dcebde); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .bonuses .how-intro { color: var(--on-dark-soft); }
 .bonus-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
 .bonus-card { padding: 38px 28px 32px; background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.13); border-radius: 22px; position: relative; overflow: hidden; transition: all .35s; backdrop-filter: blur(8px); }
-.bonus-card:hover { border-color: rgba(var(--gold-rgb),.5); background: rgba(255,255,255,.09); transform: translateY(-5px); box-shadow: 0 26px 50px rgba(0,0,0,.28); }
-.bonus-card .stage-tag { color: var(--gold-soft); }
-.bonus-card .stage-h3 { color: #fff; }
-.bonus-card .stage-text { color: var(--on-dark-soft); }
+.bonus-card:hover { border-color: rgba(var(--sage-rgb),.55); background: rgba(255,255,255,.09); transform: translateY(-5px); box-shadow: 0 26px 50px rgba(0,0,0,.28); }
+.bonus-card .b-tag { display: inline-block; font-size: 10px; letter-spacing: .18em; font-weight: 700; color: var(--sage); margin-bottom: 14px; }
+.bonus-card .b-h3 { font-weight: 800; font-size: 21px; color: #fff; margin-bottom: 11px; line-height: 1.3; }
+.bonus-card .b-text { font-size: 15px; line-height: 1.7; color: var(--on-dark-soft); }
+.bonus-card .stage-emoji { font-size: 30px; margin-bottom: 12px; display: block; }
 
-/* ===== MID CTA (בהיר) ===== */
-.mid-cta { position: relative; z-index: 1; text-align: center; padding: 88px 32px; }
-.mid-cta h2 { font-weight: 900; font-size: clamp(25px,3.3vw,40px); line-height: 1.2; letter-spacing: -.02em; color: var(--ink); margin-bottom: 26px; }
-.mid-cta h2 .gold { background: linear-gradient(120deg, var(--pine-deep), var(--pine)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-
-/* ===== INCLUDED + FIT (בהיר, עם מוקאפ) ===== */
+/* ===== INCLUDED + FIT ===== */
 .mockup-wrap { text-align: center; margin: 6px 0 44px; }
 .mockup-wrap img { max-width: min(760px, 100%); height: auto; filter: drop-shadow(0 30px 44px rgba(62,84,72,.22)); animation: hero-float 8s ease-in-out infinite; }
 .inc-list { list-style: none; display: grid; grid-template-columns: repeat(2,1fr); gap: 13px; margin: 6px 0 52px; }
@@ -225,25 +221,53 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 8px; }
 .fit-col { padding: 36px 34px 38px; border-radius: 22px; }
 .fit-col.yes { background: linear-gradient(135deg, rgba(var(--pine-rgb),.1), rgba(var(--sage-rgb),.2)); border: 1px solid rgba(var(--pine-rgb),.32); }
-.fit-col.no { background: rgba(30,43,37,.035); border: 1px solid var(--line); }
+.fit-col.no { background: rgba(var(--red-rgb),.05); border: 1px solid rgba(var(--red-rgb),.22); }
 .fit-h3 { font-weight: 900; font-size: 21px; margin-bottom: 20px; }
 .fit-h3.yes { color: var(--pine-deep); }
-.fit-h3.no { color: rgba(30,43,37,.45); }
+.fit-h3.no { color: var(--red); }
 .fit-list { list-style: none; display: flex; flex-direction: column; gap: 13px; }
 .fit-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; line-height: 1.6; }
 .fit-list.yes li { color: var(--ink); }
-.fit-list.no li { color: rgba(30,43,37,.48); }
+.fit-list.no li { color: rgba(30,43,37,.55); }
 .fit-icon { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; margin-top: 2px; }
 .fit-icon.yes { background: var(--pine); color: #fff; }
-.fit-icon.no { background: rgba(30,43,37,.12); color: rgba(30,43,37,.45); }
+.fit-icon.no { background: rgba(var(--red-rgb),.14); color: var(--red); }
 
-/* ===== OBJECTION (בהיר לבן) ===== */
-.objection { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 96px 48px; text-align: center; }
-.objection h2 { font-weight: 900; font-size: clamp(23px,2.9vw,36px); line-height: 1.3; color: var(--ink); margin-bottom: 24px; font-style: italic; }
-.objection p { font-size: clamp(16.5px,1.85vw,19.5px); line-height: 1.85; color: var(--ink-soft); }
-.objection p em { color: var(--pine-deep); font-style: normal; font-weight: 800; }
+/* ===== OBJECTION ===== */
+.objection { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; padding: 96px 48px; text-align: center; }
+.objection h2 { font-weight: 900; font-size: clamp(23px,2.9vw,36px); line-height: 1.3; color: var(--ink); margin-bottom: 30px; font-style: italic; }
+.obj-line { font-size: clamp(16.5px,1.85vw,19.5px); line-height: 1.7; color: var(--ink-soft); margin-bottom: 14px; }
+.obj-line strong { color: var(--ink); font-weight: 800; }
+.obj-big { font-size: clamp(21px,2.5vw,28px); font-weight: 900; color: var(--ink); line-height: 1.45; margin: 22px 0; }
+.obj-big .neg { color: var(--red); }
+.obj-big .pos { color: var(--pine-deep); }
 
-/* ===== ABOUT / BIO (בהיר alt, תמונות אמיתיות) ===== */
+/* ===== OFFER + FORM ===== */
+.offer { position: relative; z-index: 2; background: linear-gradient(165deg, var(--pine-deep) 0%, var(--pine-darker) 70%); padding: 110px 32px; overflow: hidden; }
+.offer::before { content: ''; position: absolute; top: -140px; left: 50%; transform: translateX(-50%); width: 800px; height: 500px; background: radial-gradient(ellipse, rgba(var(--sage-rgb),.16), transparent 65%); filter: blur(55px); pointer-events: none; }
+.offer-inner { position: relative; max-width: 620px; margin: 0 auto; text-align: center; }
+.offer .section-label { color: var(--sage); }
+.offer h2 { font-weight: 900; font-size: clamp(28px,4vw,50px); line-height: 1.14; letter-spacing: -.025em; color: #fff; margin-bottom: 16px; }
+.offer h2 .gold { background: linear-gradient(120deg, var(--sage), #dcebde); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.offer-lead { font-size: clamp(16px,1.8vw,19px); color: var(--on-dark-soft); line-height: 1.72; margin-bottom: 36px; }
+.offer-lead strong { color: #fff; }
+.offer-card { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); border-radius: 26px; padding: 42px 38px; backdrop-filter: blur(16px); box-shadow: 0 34px 90px rgba(0,0,0,.35); text-align: right; }
+.price-row { text-align: center; margin-bottom: 6px; }
+.price-num { font-weight: 900; font-size: clamp(56px,7.6vw,82px); line-height: 1; letter-spacing: -.04em; color: #fff; }
+.price-note { text-align: center; font-size: 14px; color: var(--on-dark-soft); letter-spacing: .04em; margin-bottom: 28px; }
+.lead-form { display: flex; flex-direction: column; gap: 13px; }
+.lead-form input[type=text], .lead-form input[type=email], .lead-form input[type=tel] { width: 100%; font-family: var(--font); font-size: 16px; padding: 16px 18px; border-radius: 12px; background: #fff; border: 1px solid rgba(255,255,255,.4); color: var(--ink); transition: box-shadow .25s; }
+.lead-form input::placeholder { color: rgba(30,43,37,.42); }
+.lead-form input:focus { outline: none; box-shadow: 0 0 0 3px rgba(var(--sage-rgb),.6); }
+.consent { display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.5; color: var(--on-dark-soft); margin-top: 4px; }
+.consent input { margin-top: 3px; width: 16px; height: 16px; accent-color: var(--sage); flex-shrink: 0; }
+.consent a { color: var(--sage); }
+.form-submit { margin-top: 10px; width: 100%; border: none; cursor: pointer; background: linear-gradient(120deg, #ffffff 0%, var(--sage-tint) 100%); color: var(--pine-darker); font-family: var(--font); font-weight: 900; font-size: 18px; padding: 20px; border-radius: 14px; letter-spacing: .01em; box-shadow: 0 12px 40px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.8); transition: transform .2s, box-shadow .25s; position: relative; overflow: hidden; }
+.form-submit::after { content: ''; position: absolute; top: 0; bottom: 0; left: -50%; width: 35%; background: linear-gradient(120deg, transparent 0%, rgba(var(--pine-rgb),.18) 50%, transparent 100%); transform: skewX(-22deg); animation: shimmer-sweep 3.6s ease-in-out infinite; }
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 18px 52px rgba(0,0,0,.4); }
+.offer-reassure { margin-top: 22px; font-size: 13.5px; color: var(--on-dark-soft); }
+
+/* ===== ABOUT / BIO ===== */
 .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: start; margin-top: 8px; }
 .about-photo-card { border-radius: 24px; overflow: hidden; border: 6px solid #fff; box-shadow: 0 28px 64px rgba(62,84,72,.22); transform: rotate(1.5deg); transition: transform .4s; position: sticky; top: 96px; }
 .about-photo-card:hover { transform: rotate(0deg) scale(1.02); }
@@ -257,7 +281,7 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 .collage-card img { display: block; width: 100%; height: auto; border-radius: 12px; }
 .collage-caption { font-size: 13.5px; font-weight: 600; color: var(--ink-soft); text-align: center; padding: 11px 6px; }
 
-/* ===== FAQ (בהיר) ===== */
+/* ===== FAQ ===== */
 .faq-wrap { max-width: 860px; margin: 8px auto 0; display: flex; flex-direction: column; gap: 12px; }
 .faq-item { background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; transition: border-color .3s, box-shadow .3s; }
 .faq-item[open] { border-color: rgba(var(--pine-rgb),.45); box-shadow: 0 14px 34px rgba(62,84,72,.1); }
@@ -267,37 +291,13 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 .faq-item[open] .faq-q-icon { transform: rotate(45deg); }
 .faq-a { padding: 0 27px 25px; font-size: clamp(15px,1.6vw,17px); line-height: 1.75; color: var(--ink-soft); }
 
-/* ===== OFFER + FORM - סקשן כהה 3 (הסגירה) ===== */
-.offer { position: relative; z-index: 2; background: linear-gradient(165deg, var(--pine-deep) 0%, var(--pine-darker) 70%); padding: 110px 32px; overflow: hidden; }
-.offer::before { content: ''; position: absolute; top: -140px; left: 50%; transform: translateX(-50%); width: 800px; height: 500px; background: radial-gradient(ellipse, rgba(var(--sage-rgb),.16), transparent 65%); filter: blur(55px); pointer-events: none; }
-.offer-inner { position: relative; max-width: 620px; margin: 0 auto; text-align: center; }
-.offer .section-label { color: var(--gold-soft); }
-.offer h2 { font-weight: 900; font-size: clamp(30px,4.2vw,54px); line-height: 1.1; letter-spacing: -.025em; color: #fff; margin-bottom: 16px; }
-.offer h2 .gold { background: linear-gradient(120deg, var(--gold-soft), var(--sage)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.offer-lead { font-size: clamp(16px,1.8vw,19px); color: var(--on-dark-soft); line-height: 1.72; margin-bottom: 36px; }
-.offer-card { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); border-radius: 26px; padding: 42px 38px; backdrop-filter: blur(16px); box-shadow: 0 34px 90px rgba(0,0,0,.35); text-align: right; }
-.price-row { text-align: center; margin-bottom: 6px; }
-.price-num { font-weight: 900; font-size: clamp(56px,7.6vw,82px); line-height: 1; letter-spacing: -.04em; color: #fff; }
-.price-note { text-align: center; font-size: 14px; color: var(--on-dark-soft); letter-spacing: .04em; margin-bottom: 28px; }
-.lead-form { display: flex; flex-direction: column; gap: 13px; }
-.lead-form input[type=text], .lead-form input[type=email], .lead-form input[type=tel] { width: 100%; font-family: var(--font); font-size: 16px; padding: 16px 18px; border-radius: 12px; background: #fff; border: 1px solid rgba(255,255,255,.4); color: var(--ink); transition: box-shadow .25s; }
-.lead-form input::placeholder { color: rgba(30,43,37,.42); }
-.lead-form input:focus { outline: none; box-shadow: 0 0 0 3px rgba(var(--gold-rgb),.45); }
-.consent { display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.5; color: var(--on-dark-soft); margin-top: 4px; }
-.consent input { margin-top: 3px; width: 16px; height: 16px; accent-color: var(--gold); flex-shrink: 0; }
-.consent a { color: var(--sage); }
-.form-submit { margin-top: 10px; width: 100%; border: none; cursor: pointer; background: linear-gradient(120deg, var(--gold) 0%, var(--gold-soft) 100%); color: #2b2114; font-family: var(--font); font-weight: 900; font-size: 18px; padding: 20px; border-radius: 14px; letter-spacing: .01em; box-shadow: 0 12px 40px rgba(var(--gold-rgb),.4), inset 0 1px 0 rgba(255,255,255,.35); transition: transform .2s, box-shadow .25s; position: relative; overflow: hidden; }
-.form-submit::after { content: ''; position: absolute; top: 0; bottom: 0; left: -50%; width: 35%; background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.4) 50%, transparent 100%); transform: skewX(-22deg); animation: shimmer-sweep 3.6s ease-in-out infinite; }
-.form-submit:hover { transform: translateY(-2px); box-shadow: 0 18px 52px rgba(var(--gold-rgb),.55); }
-.offer-reassure { margin-top: 22px; font-size: 13.5px; color: var(--on-dark-soft); }
-
-/* ===== FOOTER (כהה) ===== */
+/* ===== FOOTER ===== */
 .site-footer { position: relative; z-index: 2; background: var(--pine-darker); border-top: 1px solid rgba(255,255,255,.08); padding: 52px 48px; text-align: center; }
 .footer-mark { font-weight: 900; font-size: 22px; letter-spacing: .06em; color: #fff; margin-bottom: 10px; display: inline-block; }
 .footer-meta { font-size: 12px; letter-spacing: .1em; color: rgba(238,244,239,.55); font-weight: 300; line-height: 1.7; }
 
-/* ===== CURSOR GLOW (סקשנים כהים בלבד) ===== */
-#cursor-glow { position: fixed; pointer-events: none; z-index: 50; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--sage-rgb),.22) 0%, rgba(var(--gold-rgb),.1) 40%, transparent 70%); filter: blur(46px); transform: translate(-50%, -50%); opacity: 0; transition: opacity .45s ease; }
+/* ===== CURSOR GLOW ===== */
+#cursor-glow { position: fixed; pointer-events: none; z-index: 50; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--sage-rgb),.24) 0%, rgba(var(--pine-rgb),.1) 40%, transparent 70%); filter: blur(46px); transform: translate(-50%, -50%); opacity: 0; transition: opacity .45s ease; }
 #cursor-glow.visible { opacity: 1; }
 
 /* ===== FADEUP ===== */
@@ -315,14 +315,15 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
  .hero { padding-top: 120px; }
  .hero-grid { grid-template-columns: 1fr; gap: 38px; }
  .hero-visual { order: -1; max-width: 460px; margin: 0 auto; width: 100%; }
- .stats-inner { grid-template-columns: 1fr 1fr; }
- .stage-grid, .bonus-grid { grid-template-columns: 1fr; }
- .does-grid, .inc-list, .fit-grid { grid-template-columns: 1fr; }
+ .does-grid, .inc-list, .fit-grid, .bonus-grid { grid-template-columns: 1fr; }
  .wa-proof { grid-template-columns: 1fr; gap: 32px; }
  .about-grid { grid-template-columns: 1fr; gap: 28px; }
  .about-photo-card { max-width: 320px; margin: 0 auto; position: static; }
  .about-collages { grid-template-columns: 1fr; }
  .light-wrap, .story, .how, .bonuses-wrap, .objection { padding-left: 22px; padding-right: 22px; }
+ .journey { padding-right: 48px; }
+ .journey-track { right: 16px; }
+ .j-node { right: -48px; width: 38px; height: 38px; font-size: 13px; }
  .offer-card { padding: 32px 22px; }
  .sc-out, .sc-in { padding: 16px 30px 16px 18px; font-size: 14px; }
  .sticky-cta { display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 95; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(238,244,239,.95); backdrop-filter: blur(20px); border-top: 1px solid var(--line); }
@@ -337,21 +338,21 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 <div id="cursor-glow"></div>
 <div id="scroll-progress"></div>
 
-<!-- ===== SCENE - רקע בהיר חי ===== -->
+<!-- ===== SCENE ===== -->
 <div class="scene">
  <div class="blob blob-a"></div><div class="blob blob-b"></div><div class="blob blob-c"></div>
  <div class="scene-ring"></div>
  <div class="scene-grid"></div>
 </div>
 
-<!-- ===== NAV ===== -->
+<!-- ===== NAV (בלי מחיר) ===== -->
 <nav>
  <div class="nav-left"><span class="brand-mark">RichLife</span><div class="nav-divider"></div><span class="nav-sub">קורס דיגיטלי</span></div>
- <div class="nav-center"><div class="pill pill-pine"><span class="live-dot"></span>גישה מיידית</div><div class="pill pill-plain">97 ₪ בלבד</div></div>
+ <div class="nav-center"><div class="pill pill-pine"><span class="live-dot"></span>גישה מיידית</div><div class="pill pill-plain">בקצב שלך, מכל מכשיר</div></div>
  <a href="#join" class="nav-cta">אני רוצה להתחיל</a>
 </nav>
 
-<!-- ===== HERO ===== -->
+<!-- ===== HERO (בלי מחיר) ===== -->
 <section class="hero">
  <div class="hero-grid">
   <div class="hero-copy">
@@ -371,10 +372,8 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 
    <div class="cta-group">
     <a href="#join" class="cta-primary">אני רוצה להתחיל להשקיע</a>
-    <a href="#how" class="cta-secondary">מה יש בקורס ↓</a>
+    <a href="#story-section" class="cta-secondary">ספרו לי עוד ↓</a>
    </div>
-
-   <p class="scarcity">הכל ב-97 ₪. פחות מארוחה בחוץ, אבל הפעם את קונה לעצמך הזדמנות.</p>
   </div>
 
   <div class="hero-visual">
@@ -384,24 +383,14 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
  </div>
 </section>
 
-<!-- ===== STATS - כהה 1 ===== -->
-<section class="stats">
- <div class="stats-inner">
-  <div class="stat-item"><div class="stat-num" data-target="5"><span class="stat-countup">5</span></div><div class="stat-label">שלבים ברורים</div></div>
-  <div class="stat-item"><div class="stat-num" data-target="3"><span class="stat-countup">3</span></div><div class="stat-label">בונוסים במתנה</div></div>
-  <div class="stat-item"><div class="stat-num" data-target="10"><span class="stat-countup">10</span><span class="stat-suffix"> דק'</span></div><div class="stat-label">אורך כל שיעור, בקצר</div></div>
-  <div class="stat-item"><div class="stat-num" data-target="97"><span class="stat-countup">97</span><span class="stat-suffix"> ₪</span></div><div class="stat-label">וזה הכל, גישה מיידית</div></div>
- </div>
-</section>
-
 <!-- ===== STORY / PROBLEM ===== -->
 <section class="story" id="story-section">
  <div class="section-label">// מה עוצר אותך</div>
  <h2>את יודעת שזה חשוב. אבל משהו <span class="gold">עוצר אותך.</span></h2>
 
- <p>כבר הבנת שלהשאיר את הכסף בעו"ש זה לא נכון. את מרגישה את המחירים עולים, שהמשכורת לא באותו קצב, ומתחילה לחשוב על לשים את הכסף שיעבוד.</p>
- <p>אבל פתאום זה מרגיש שכולם מסביבך כבר מבינים. אחת מספרת על קרן שהשקיעה בה, חברה מדברת על S&amp;P, ומישהו בכלל טוען שקריפטו זה העתיד. ואת? זה מרגיש לך <em>גדול עלייך</em>, כאילו זה עולם שלם שלא ברור מאיפה בכלל נכנסים אליו.</p>
- <p>ואולי כבר תפסת אומץ וניסית להבין. הבעיה היא שיצאת יותר מבולבלת מרוב השמות והמושגים המפחידים, ובאיזשהו שלב המוח פשוט אומר "עזבי, אחר כך". ואז עובר עוד חודש. ועוד חודש. והכסף עדיין באותו מקום.</p>
+ <p>כבר הבנת ש<strong>להשאיר את הכסף בעו"ש זה לא נכון</strong>. את מרגישה את המחירים עולים, <em>שהמשכורת לא באותו קצב</em>, ומתחילה לחשוב על לשים את הכסף שיעבוד.</p>
+ <p>אבל פתאום זה מרגיש ש<strong>כולם מסביבך כבר מבינים</strong>. אחת מספרת על קרן שהשקיעה בה, חברה מדברת על S&amp;P, ומישהו בכלל טוען שקריפטו זה העתיד. ואת? זה מרגיש לך <em>גדול עלייך</em>, כאילו זה עולם שלם שלא ברור מאיפה בכלל נכנסים אליו.</p>
+ <p>ואולי כבר תפסת אומץ וניסית להבין. הבעיה היא ש<strong>יצאת יותר מבולבלת</strong> מרוב השמות והמושגים המפחידים, ובאיזשהו שלב המוח פשוט אומר "עזבי, אחר כך". ואז עובר עוד חודש. ועוד חודש. <span class="neg">והכסף עדיין באותו מקום.</span></p>
 
  <ul class="story-list">
   <li class="fadeup-ready" style="--delay:0s"><span class="li-icon">😰</span><span>פחד להפסיד כסף.</span></li>
@@ -417,66 +406,78 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
  </div>
 </section>
 
-<!-- ===== SOLUTION + BEFORE/AFTER ===== -->
+<!-- ===== חץ הזמנה ===== -->
+<div class="scroll-invite">
+ <div class="si-text">בדיוק בשביל זה נוצר הקורס</div>
+ <a href="#solution" aria-label="להמשיך לקרוא">⌄</a>
+</div>
+
+<!-- ===== SOLUTION ===== -->
 <section class="light-section alt" id="solution">
  <div class="light-wrap">
-  <div class="light-eyebrow">// בדיוק בשביל זה נוצר הקורס</div>
+  <div class="light-eyebrow">// הפתרון</div>
   <h2 class="light-h2">להשקיע לראשונה, <span class="orange">בקלות.</span></h2>
-  <p class="light-intro">זה לא קורס שינסה להפוך אותך למומחית בשוק ההון, ולא עשרות שעות של גרפים וטבלאות. זו תוכנית דיגיטלית קצרה, בשפה נגישה וברורה, שלוקחת אותך צעד אחר צעד עד ההשקעה הראשונה שלך בפועל. <strong>גם אם מתחילים מ-50 או 100 ש"ח בחודש.</strong> את לא כאן כדי להתעשר מחר בבוקר, את כאן כדי להפוך ממישהי שחושבת על השקעות, למישהי שכבר התחילה.</p>
-
-  <div class="shifts-table">
-   <div class="sh-head out">היום</div>
-   <div class="sh-head in">אחרי הקורס</div>
-   <div class="sc-out">הכסף יושב בעו"ש</div>
-   <div class="sc-in">הכסף מושקע ומתחיל לעבוד</div>
-   <div class="sc-out">מוצפת ממאה דעות סותרות</div>
-   <div class="sc-in">דרך אחת פשוטה וברורה</div>
-   <div class="sc-out">מפחדת לבחור לא נכון</div>
-   <div class="sc-in">מבינה מה את עושה ולמה</div>
-   <div class="sc-out">"אני אגיע לזה אחר כך"</div>
-   <div class="sc-in">כבר עשית את זה בפועל</div>
-   <div class="sc-out">מושגים שנשמעים כמו סינית</div>
-   <div class="sc-in">מושגים ברורים ופשוטים</div>
-  </div>
+  <p class="light-intro">זה <span class="neg">לא</span> קורס שינסה להפוך אותך למומחית בשוק ההון, ו<span class="neg">לא</span> עשרות שעות של גרפים וטבלאות. זו <span class="pos">תוכנית דיגיטלית קצרה</span>, ב<span class="pos">שפה נגישה וברורה</span>, שלוקחת אותך <span class="pos">צעד אחר צעד</span> עד ההשקעה הראשונה שלך בפועל. <strong>גם אם מתחילים מ-50 או 100 ש"ח בחודש.</strong> את לא כאן כדי להתעשר מחר בבוקר, את כאן כדי להפוך ממישהי שחושבת על השקעות, למישהי שכבר התחילה.</p>
  </div>
 </section>
 
-<!-- ===== HOW / 5 STEPS ===== -->
+<!-- ===== JOURNEY ===== -->
 <section class="how" id="how">
  <div class="section-label">// איך זה עובד</div>
  <h2>5 שלבים, מ"אין לי מושג" <span class="gold">ל"עשיתי".</span></h2>
- <p class="how-intro">הקורס בנוי במודולים קצרים וברורים, שלוקחים אותך מהשלב של "אני יודעת שאני צריכה, אבל אין לי מושג איך", עד לביצוע ההשקעה הראשונה בפועל.</p>
+ <p class="how-intro">הקורס בנוי במודולים קצרים וברורים, שלוקחים אותך מהשלב של "אני יודעת שאני צריכה, אבל אין לי מושג איך", עד לביצוע ההשקעה הראשונה בפועל. ככל שגוללים - המסע נפתח.</p>
 
- <div class="stage-grid">
-  <div class="stage-card fadeup-ready" style="--delay:0s">
-   <div class="stage-num">01</div><div class="stage-tag">שלב 1</div>
-   <div class="stage-h3">מה זו בכלל השקעה, ולמה להתחיל</div>
-   <div class="stage-text">עושים סדר במושגים, מבינות למה כסף בעו"ש לא עובד בשבילך, ולמה להתחיל מוקדם חשוב הרבה יותר מלהתחיל מושלם.</div>
+ <div class="journey" id="journey">
+  <div class="journey-track" id="journey-track"><div class="journey-fill" id="journey-fill"></div></div>
+
+  <div class="j-step">
+   <div class="j-node">1</div>
+   <div class="j-card">
+    <span class="j-emoji">💡</span><span class="j-tag">שלב 1</span>
+    <div class="j-h3">מה זו בכלל השקעה, ולמה להתחיל</div>
+    <div class="j-text">עושים סדר במושגים, מבינות למה כסף בעו"ש לא עובד בשבילך, ולמה להתחיל מוקדם חשוב הרבה יותר מלהתחיל מושלם.</div>
+   </div>
   </div>
-  <div class="stage-card fadeup-ready" style="--delay:.08s">
-   <div class="stage-num">02</div><div class="stage-tag">שלב 2</div>
-   <div class="stage-h3">אילו אפשרויות מתאימות למתחילות</div>
-   <div class="stage-text">מכירות את האפשרויות הקיימות, היתרונות והחסרונות של כל אחת, ובמה בכלל לא נוגעות בשלב הזה. סוף להצפה.</div>
+
+  <div class="j-step">
+   <div class="j-node">2</div>
+   <div class="j-card">
+    <span class="j-emoji">🗺️</span><span class="j-tag">שלב 2</span>
+    <div class="j-h3">אילו אפשרויות מתאימות למתחילות</div>
+    <div class="j-text">מכירות את האפשרויות הקיימות, היתרונות והחסרונות של כל אחת, ובמה בכלל לא נוגעות בשלב הזה. סוף להצפה.</div>
+   </div>
   </div>
-  <div class="stage-card fadeup-ready" style="--delay:.16s">
-   <div class="stage-num">03</div><div class="stage-tag">שלב 3</div>
-   <div class="stage-h3">כמה להשקיע ולכמה זמן</div>
-   <div class="stage-text">איך לחשוב על הסכום, להגדיר מטרה, ולקבל החלטה שמרגישה נכונה גם מבחינה כלכלית וגם מבחינה רגשית.</div>
+
+  <div class="j-step">
+   <div class="j-node">3</div>
+   <div class="j-card">
+    <span class="j-emoji">🎯</span><span class="j-tag">שלב 3</span>
+    <div class="j-h3">כמה להשקיע ולכמה זמן</div>
+    <div class="j-text">איך לחשוב על הסכום, להגדיר מטרה, ולקבל החלטה שמרגישה נכונה גם מבחינה כלכלית וגם מבחינה רגשית.</div>
+   </div>
   </div>
-  <div class="stage-card fadeup-ready" style="--delay:0s">
-   <div class="stage-num">04</div><div class="stage-tag">שלב 4</div>
-   <div class="stage-h3">מבצעות את ההשקעה הראשונה</div>
-   <div class="stage-text">השלב שבו מפסיקים ללמוד ומתחילים לעשות. אני אראה לך בצורה פשוטה וברורה איך לבצע את ההשקעה הראשונה, שלב אחר שלב.</div>
+
+  <div class="j-step">
+   <div class="j-node">4</div>
+   <div class="j-card">
+    <span class="j-emoji">🚀</span><span class="j-tag">שלב 4</span>
+    <div class="j-h3">מבצעות את ההשקעה הראשונה</div>
+    <div class="j-text">השלב שבו מפסיקים ללמוד ומתחילים לעשות. אני אראה לך בצורה פשוטה וברורה איך לבצע את ההשקעה הראשונה, שלב אחר שלב.</div>
+   </div>
   </div>
-  <div class="stage-card fadeup-ready" style="--delay:.08s">
-   <div class="stage-num">05</div><div class="stage-tag">שלב 5</div>
-   <div class="stage-h3">היום שאחרי ההשקעה</div>
-   <div class="stage-text">מה עושים כשהשוק יורד? איך ממשיכים ברוגע ובביטחון, בלי החלטות שמתקבלות מתוך פחד או חוסר סבלנות.</div>
+
+  <div class="j-step">
+   <div class="j-node">5</div>
+   <div class="j-card">
+    <span class="j-emoji">🌱</span><span class="j-tag">שלב 5</span>
+    <div class="j-h3">היום שאחרי ההשקעה</div>
+    <div class="j-text">מה עושים כשהשוק יורד? איך ממשיכים ברוגע ובביטחון, בלי החלטות שמתקבלות מתוך פחד או חוסר סבלנות.</div>
+   </div>
   </div>
  </div>
 </section>
 
-<!-- ===== OUTCOMES ===== -->
+<!-- ===== OUTCOMES + טבלת סיכום ===== -->
 <section class="light-section alt" id="outcomes">
  <div class="light-wrap">
   <div class="light-eyebrow">// מה יקרה לך אחרי</div>
@@ -515,10 +516,26 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
     <div class="does-text">הצעד הראשון הזה הוא לא הסוף, הוא הבסיס לכל החלטה כלכלית טובה שתבוא אחריו.</div>
    </div>
   </div>
+
+  <div class="shifts-title">ובשורה התחתונה:</div>
+  <div class="shifts-table">
+   <div class="sh-head out">היום</div>
+   <div class="sh-head in">אחרי הקורס</div>
+   <div class="sc-out">הכסף יושב בעו"ש</div>
+   <div class="sc-in">הכסף מושקע ומתחיל לעבוד</div>
+   <div class="sc-out">מוצפת ממאה דעות סותרות</div>
+   <div class="sc-in">דרך אחת פשוטה וברורה</div>
+   <div class="sc-out">מפחדת לבחור לא נכון</div>
+   <div class="sc-in">מבינה מה את עושה ולמה</div>
+   <div class="sc-out">"אני אגיע לזה אחר כך"</div>
+   <div class="sc-in">כבר עשית את זה בפועל</div>
+   <div class="sc-out">מושגים שנשמעים כמו סינית</div>
+   <div class="sc-in">מושגים ברורים ופשוטים</div>
+  </div>
  </div>
 </section>
 
-<!-- ===== SOCIAL PROOF - וואטסאפ אמיתי ===== -->
+<!-- ===== SOCIAL PROOF ===== -->
 <section class="light-section white" id="proof">
  <div class="light-wrap">
   <div class="wa-proof">
@@ -536,7 +553,7 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
  </div>
 </section>
 
-<!-- ===== BONUSES - כהה 2 ===== -->
+<!-- ===== BONUSES ===== -->
 <section class="bonuses" id="bonuses">
  <div class="bonuses-wrap">
   <div class="section-label">// וזה לא הכל</div>
@@ -545,29 +562,21 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 
   <div class="bonus-grid">
    <div class="bonus-card fadeup-ready" style="--delay:0s">
-    <span class="stage-emoji">🎯</span><div class="stage-tag">בונוס 1</div>
-    <div class="stage-h3">מחשבון יעדים והשקעות</div>
-    <div class="stage-text">מכניסה מטרה, יעד כספי ומספר שנים, והמחשבון אומר לך כמה להשקיע כל חודש. סוף לשאלה "כמה בכלל?".</div>
+    <span class="stage-emoji">🎯</span><div class="b-tag">בונוס 1</div>
+    <div class="b-h3">מחשבון יעדים והשקעות</div>
+    <div class="b-text">מכניסה מטרה, יעד כספי ומספר שנים, והמחשבון אומר לך כמה להשקיע כל חודש. סוף לשאלה "כמה בכלל?".</div>
    </div>
    <div class="bonus-card fadeup-ready" style="--delay:.08s">
-    <span class="stage-emoji">📖</span><div class="stage-tag">בונוס 2</div>
-    <div class="stage-h3">מילון מושגים בלי סינית</div>
-    <div class="stage-text">עמוד מושגים ברור ונגיש, בשפה שגם ילד בכיתה ד' יבין. כי מושגים נשמעים מפחידים רק כי אף אחד לא הסביר אותם פשוט.</div>
+    <span class="stage-emoji">📖</span><div class="b-tag">בונוס 2</div>
+    <div class="b-h3">מילון מושגים בלי סינית</div>
+    <div class="b-text">עמוד מושגים ברור ונגיש, בשפה שגם ילד בכיתה ד' יבין. כי מושגים נשמעים מפחידים רק כי אף אחד לא הסביר אותם פשוט.</div>
    </div>
    <div class="bonus-card fadeup-ready" style="--delay:.16s">
-    <span class="stage-emoji">✅</span><div class="stage-tag">בונוס 3</div>
-    <div class="stage-h3">צ'ק ליסט להשקעה</div>
-    <div class="stage-text">רשימת צעדים פשוטה שמלווה אותך לאורך התהליך ומוודאת שלא פספסת שום דבר בדרך.</div>
+    <span class="stage-emoji">✅</span><div class="b-tag">בונוס 3</div>
+    <div class="b-h3">צ'ק ליסט להשקעה</div>
+    <div class="b-text">רשימת צעדים פשוטה שמלווה אותך לאורך התהליך ומוודאת שלא פספסת שום דבר בדרך.</div>
    </div>
   </div>
- </div>
-</section>
-
-<!-- ===== MID CTA ===== -->
-<section class="mid-cta">
- <h2>מוכנה לעשות סוף סוף <span class="gold">את הצעד הראשון?</span></h2>
- <div class="cta-group" style="justify-content:center">
-  <a href="#join" class="cta-primary">אני רוצה להתחיל · 97 ₪</a>
  </div>
 </section>
 
@@ -617,7 +626,45 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 <!-- ===== OBJECTION ===== -->
 <section class="objection">
  <h2>"אבל יש מלא מידע בחינם באינטרנט..."</h2>
- <p>נכון. והבעיה היא לא שחסר מידע, אלא שיש יותר מדי. כל אחד ממליץ על משהו אחר, במושגים אחרים, ובסוף במקום לקבל תשובה את יוצאת יותר מבולבלת. הקורס הזה לא נועד לתת לך עוד מידע. הוא נועד לעשות לך <em>סדר</em>, ולהראות דרך אחת פשוטה וברורה להשקעה ראשונה, בלי כל המילים המפוצצות שגורמות לרוב האנשים לסגור את החלון אחרי שתי דקות.</p>
+ <p class="obj-line"><strong>נכון.</strong></p>
+ <p class="obj-big">והבעיה היא <span class="neg">לא</span> שחסר מידע.<br>הבעיה היא שיש <span class="neg">יותר מדי</span>.</p>
+ <p class="obj-line">כל אחד ממליץ על משהו אחר, במושגים אחרים,<br>ובסוף במקום לקבל תשובה - את יוצאת יותר מבולבלת.</p>
+ <p class="obj-big">הקורס הזה לא נועד לתת לך עוד מידע.<br>הוא נועד לעשות לך <span class="pos">סדר</span>.</p>
+ <p class="obj-line">דרך אחת פשוטה וברורה להשקעה ראשונה, בלי המילים המפוצצות<br>שגורמות לרוב האנשים לסגור את החלון אחרי שתי דקות.</p>
+</section>
+
+<!-- ===== OFFER + FORM ===== -->
+<section class="offer" id="join">
+ <div class="offer-inner">
+  <div class="section-label">// אז כמה עולה לך להצטרף?</div>
+  <h2>מוכנה לעשות סוף סוף <span class="gold">את הצעד הראשון?</span></h2>
+  <p class="offer-lead">המטרה שלי היא להנגיש את הידע הזה בצורה הכי פשוטה ולא מאיימת שיש. לכן ההשקעה שלך בקורס היא <strong>פחות מארוחה בוולט, פחות מחולצה בזארה</strong>. אבל בניגוד אליהן, הפעם את קונה לעצמך הזדמנות לעשות את הצעד הראשון לעולם ההשקעות.</p>
+
+  <div class="offer-card">
+   <div class="price-row"><span class="price-num">97 ₪</span></div>
+   <div class="price-note">תשלום חד פעמי · גישה מיידית · לכל החיים</div>
+
+   <!-- טופס אמיתי: נשלח לרב מסר (רשימת מתעניינות 94567) → רב מסר מעביר לעמוד התשלום של Grow (passthrough).
+        החיווט זהה לטופס בדף ה-ravpage המקורי (form_id 205458). אל תשנו names/hidden. -->
+   <form class="lead-form" id="join-form" action="https://safe-subscriber.responder.live/" method="post" accept-charset="utf-8">
+    <input type="hidden" name="language" value="he">
+    <input type="hidden" name="fields[101027_List:94567]" value="1955ae2b8a34e533fbe068db5597d6b56A1C1EEF">
+    <input type="hidden" name="fields[101028_List:94567]" value="">
+    <input type="hidden" name="form_id" value="205458">
+    <input type="hidden" name="encoding" value="utf-8">
+    <input type="hidden" name="ravxxc" value="1955ae2b8a34e533fbe068db5597d6b56A1C1EEF:6521305_10001546">
+    <input type="hidden" name="ravxxc_passthrough_domain" value="pay.grow.link">
+    <input type="hidden" name="__ravxx_url__" value="http://richlife.ravpage.co.il/first-invest">
+    <input type="text" name="fields[13_Fixed]" placeholder="שם" maxlength="80" autocomplete="name" required>
+    <input type="email" name="fields[1_Fixed]" placeholder="מייל" maxlength="255" autocomplete="email" required>
+    <input type="tel" name="fields[2_Fixed]" placeholder="טלפון נייד" maxlength="40" autocomplete="tel" required>
+    <label class="consent"><input type="checkbox" name="confirm_registration" value="true" required><span>אני מאשרת את <a href="https://richlife.ravpage.co.il/takanon" target="_blank" rel="noopener">התקנון</a>, <a href="https://richlife.ravpage.co.il/pratiuy" target="_blank" rel="noopener">מדיניות הפרטיות</a> וקבלת דיוור מטלי שרעבי.</span></label>
+    <button type="submit" class="form-submit">כן, אני רוצה להתחיל להשקיע</button>
+   </form>
+  </div>
+
+  <p class="offer-reassure">ואם הגעת עד לכאן, את כבר יודעת שהגיע הזמן להפסיק לדחות ולהתחיל לפעול.</p>
+ </div>
 </section>
 
 <!-- ===== ABOUT / BIO ===== -->
@@ -683,53 +730,19 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
  </div>
 </section>
 
-<!-- ===== OFFER + FORM - כהה 3, הסגירה ===== -->
-<section class="offer" id="join">
- <div class="offer-inner">
-  <div class="section-label">// כמה זה עולה לך להצטרף</div>
-  <h2>הכל, ב-<span class="gold">97 ₪ בלבד.</span></h2>
-  <p class="offer-lead">המטרה שלי היא להנגיש את הידע הזה בצורה הכי פשוטה ולא מאיימת שיש. לכן ההשקעה שלך בקורס היא פחות מארוחה בוולט, פחות מחולצה בזארה. אבל בניגוד אליהן, הפעם את קונה לעצמך הזדמנות לעשות את הצעד הראשון לעולם ההשקעות.</p>
-
-  <div class="offer-card">
-   <div class="price-row"><span class="price-num">97 ₪</span></div>
-   <div class="price-note">תשלום חד פעמי · גישה מיידית · לכל החיים</div>
-
-   <!-- טופס אמיתי: נשלח לרב מסר (רשימת מתעניינות 94567) → רב מסר מעביר לעמוד התשלום של Grow (passthrough).
-        החיווט זהה לטופס בדף ה-ravpage המקורי (form_id 205458). אל תשנו names/hidden. -->
-   <form class="lead-form" id="join-form" action="https://safe-subscriber.responder.live/" method="post" accept-charset="utf-8">
-    <input type="hidden" name="language" value="he">
-    <input type="hidden" name="fields[101027_List:94567]" value="1955ae2b8a34e533fbe068db5597d6b56A1C1EEF">
-    <input type="hidden" name="fields[101028_List:94567]" value="">
-    <input type="hidden" name="form_id" value="205458">
-    <input type="hidden" name="encoding" value="utf-8">
-    <input type="hidden" name="ravxxc" value="1955ae2b8a34e533fbe068db5597d6b56A1C1EEF:6521305_10001546">
-    <input type="hidden" name="ravxxc_passthrough_domain" value="pay.grow.link">
-    <input type="hidden" name="__ravxx_url__" value="http://richlife.ravpage.co.il/first-invest">
-    <input type="text" name="fields[13_Fixed]" placeholder="שם" maxlength="80" autocomplete="name" required>
-    <input type="email" name="fields[1_Fixed]" placeholder="מייל" maxlength="255" autocomplete="email" required>
-    <input type="tel" name="fields[2_Fixed]" placeholder="טלפון נייד" maxlength="40" autocomplete="tel" required>
-    <label class="consent"><input type="checkbox" name="confirm_registration" value="true" required><span>אני מאשרת את <a href="https://richlife.ravpage.co.il/takanon" target="_blank" rel="noopener">התקנון</a>, <a href="https://richlife.ravpage.co.il/pratiuy" target="_blank" rel="noopener">מדיניות הפרטיות</a> וקבלת דיוור מטלי שרעבי.</span></label>
-    <button type="submit" class="form-submit">כן, אני רוצה להתחיל להשקיע</button>
-   </form>
-  </div>
-
-  <p class="offer-reassure">ואם הגעת עד לכאן, את כבר יודעת שהגיע הזמן להפסיק לדחות ולהתחיל לפעול.</p>
- </div>
-</section>
-
 <!-- ===== FOOTER ===== -->
 <footer class="site-footer">
  <span class="footer-mark">RichLife</span>
  <div class="footer-meta">טלי בנימינוב · ליווי פיננסי, חיסכון והשקעות<br>RichLife · כל הזכויות שמורות</div>
 </footer>
 
-<!-- ===== STICKY MOBILE CTA ===== -->
+<!-- ===== STICKY MOBILE CTA (בלי מחיר) ===== -->
 <div class="sticky-cta">
- <a href="#join">להצטרף לקורס · 97 ₪</a>
+ <a href="#join">אני רוצה להתחיל להשקיע</a>
 </div>
 
 <!-- ════════════════════════════════════════════════════════════════
-   JS - מודולים אינטראקטיביים (מהקיט, מותאמים לפלטה הבהירה)
+   JS - מודולים אינטראקטיביים
 ═════════════════════════════════════════════════════════════════ -->
 <script>
 /* ===== 1. SCROLL PROGRESS BAR ===== */
@@ -831,7 +844,7 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
   function wrapNode(node) {
    if (node.nodeType === Node.TEXT_NODE) {
     if (node.textContent.trim()) wrapTextNode(node);
-   } else if (node.nodeType === Node.ELEMENT_NODE) {
+   } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'STRONG' && node.tagName !== 'EM' && !node.classList.contains('neg')) {
     Array.from(node.childNodes).forEach(child => wrapNode(child));
    }
   }
@@ -852,37 +865,26 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
  updateHighlight();
 })();
 
-/* ===== 4. COUNT-UP on STATS ===== */
-(function initCountUp() {
- const statsInner = document.querySelector('.stats-inner');
- if (!statsInner || !('IntersectionObserver' in window)) return;
- let triggered = false;
- function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
- function animateCount(el, target, duration) {
-  let start = null;
-  function step(ts) {
-   if (!start) start = ts;
-   const p = Math.min((ts - start) / duration, 1);
-   el.textContent = Math.round(easeOutCubic(p) * target);
-   if (p < 1) requestAnimationFrame(step); else el.textContent = target;
-  }
-  requestAnimationFrame(step);
- }
- const obs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-   if (entry.isIntersecting && !triggered) {
-    triggered = true; obs.disconnect();
-    statsInner.querySelectorAll('.stat-item').forEach(function(item) {
-     const numEl = item.querySelector('.stat-num');
-     if (!numEl) return;
-     const target = parseInt(numEl.getAttribute('data-target'), 10);
-     const countEl = numEl.querySelector('.stat-countup');
-     if (countEl && !isNaN(target)) animateCount(countEl, target, 1400);
-    });
-   }
+/* ===== 4. JOURNEY - קו התקדמות + הדלקת שלבים בגלילה ===== */
+(function initJourney() {
+ const track = document.getElementById('journey-track');
+ const fill = document.getElementById('journey-fill');
+ if (!track || !fill) return;
+ const steps = Array.from(document.querySelectorAll('.j-step'));
+ function upd() {
+  const r = track.getBoundingClientRect();
+  const vh = window.innerHeight;
+  const passed = Math.min(Math.max(vh * 0.72 - r.top, 0), r.height);
+  fill.style.height = passed + 'px';
+  steps.forEach(function(s) {
+   const sr = s.getBoundingClientRect();
+   if (sr.top + 60 < vh * 0.72) s.classList.add('lit');
+   else s.classList.remove('lit');
   });
- }, { threshold: 0.3 });
- obs.observe(statsInner);
+ }
+ window.addEventListener('scroll', upd, { passive: true });
+ window.addEventListener('resize', upd);
+ upd();
 })();
 
 /* ===== 5. FADEUP STAGGER ===== */
@@ -910,7 +912,7 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 (function initCursorGlow() {
  const glow = document.getElementById('cursor-glow');
  if (!glow) return;
- const darkSelectors = ['.stats', '.bonuses', '.offer', '.site-footer'];
+ const darkSelectors = ['.bonuses', '.offer', '.site-footer'];
  const darkEls = darkSelectors.map(s => document.querySelector(s)).filter(Boolean);
  let gx = 0, gy = 0, tx = 0, ty = 0, active = false, rafId = null;
  function isOverDark(x, y) {
@@ -941,16 +943,16 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
  });
 })();
 
-/* ===== 7. 3D TILT על כרטיסי השלבים והבונוסים ===== */
+/* ===== 7. 3D TILT ===== */
 (function initTilt() {
  if (window.matchMedia('(hover: none)').matches) return;
- const MAX_TILT = 6, PERSP = 900;
- document.querySelectorAll('.stage-card, .bonus-card').forEach(function(card) {
+ const MAX_TILT = 5, PERSP = 900;
+ document.querySelectorAll('.j-card, .bonus-card, .does-card').forEach(function(card) {
   card.addEventListener('mousemove', function(e) {
    const r = card.getBoundingClientRect();
    const nx = ((e.clientX - r.left) / r.width - 0.5) * 2;
    const ny = ((e.clientY - r.top) / r.height - 0.5) * 2;
-   card.style.transform = 'perspective(' + PERSP + 'px) rotateX(' + (-ny * MAX_TILT) + 'deg) rotateY(' + (nx * MAX_TILT) + 'deg) translateY(-5px)';
+   card.style.transform = 'perspective(' + PERSP + 'px) rotateX(' + (-ny * MAX_TILT) + 'deg) rotateY(' + (nx * MAX_TILT) + 'deg) translateY(-4px)';
   });
   card.addEventListener('mouseleave', function() {
    card.style.transform = '';
@@ -958,8 +960,7 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
  });
 })();
 
-/* ===== 8. FORM - שליחה אמיתית לרב מסר (רשימה 94567) → מעבר אוטומטי ל-Grow.
-   הטופס נשלח בניווט מלא (native POST); כאן רק מגינים מלחיצה כפולה. ===== */
+/* ===== 8. FORM - שליחה אמיתית לרב מסר (רשימה 94567) → מעבר אוטומטי ל-Grow ===== */
 (function initForm() {
  const form = document.getElementById('join-form');
  if (!form) return;
