@@ -84,7 +84,12 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 .bli-chips { display: inline-flex; gap: 10px; flex-wrap: wrap; margin: 20px 0 26px; }
 .bli-chip { display: inline-flex; align-items: center; gap: 9px; padding: 10px 20px; border-radius: 100px; background: #fff; border: 1px solid rgba(var(--pine-rgb),.3); font-weight: 700; font-size: clamp(13px, 1.3vw, 15px); color: var(--ink); box-shadow: 0 4px 16px rgba(30,43,37,.06); transition: all .25s; }
 .bli-chip:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(var(--pine-rgb),.18); border-color: rgba(var(--pine-rgb),.5); }
-.bli-chip-x { width: 18px; height: 18px; border-radius: 50%; background: rgba(var(--red-rgb),.12); color: var(--red); display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; }
+.bli-chip-x { width: 18px; height: 18px; border-radius: 50%; background: var(--red); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; box-shadow: 0 2px 8px rgba(var(--red-rgb),.4); }
+/* ===== ההוק הכהה בפתיח ===== */
+.hero-hook { max-width: 1180px; margin: 0 auto 34px; text-align: center; position: relative; z-index: 3; }
+.hero-hook-inner { display: inline-block; background: linear-gradient(150deg, var(--pine-darker) 0%, var(--pine-deep) 85%); color: var(--on-dark); border-radius: 20px; padding: 24px 42px; box-shadow: 0 20px 50px rgba(47,64,54,.35); font-size: clamp(16px,1.9vw,20px); line-height: 1.75; font-weight: 500; }
+.hero-hook-inner .hh-quote { display: block; font-weight: 900; font-size: 1.3em; color: #fff; margin: 2px 0; }
+.hero-hook-inner .hh-tail { color: rgba(238,244,239,.8); }
 .sub-promise { font-size: clamp(17px,2vw,21px); font-weight: 400; line-height: 1.75; color: var(--ink-soft); margin-bottom: 28px; min-height: 4.5em; }
 .sub-promise strong { color: var(--ink); font-weight: 700; }
 .sub-promise .warm { color: var(--pine-deep); font-weight: 700; }
@@ -173,6 +178,24 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 .j-tag { display: inline-block; font-size: 10px; letter-spacing: .18em; font-weight: 700; color: var(--pine); margin-bottom: 8px; margin-right: 12px; }
 .j-h3 { font-weight: 800; font-size: clamp(19px,2vw,23px); color: var(--ink); margin-bottom: 10px; line-height: 1.3; }
 .j-text { font-size: clamp(14.5px,1.6vw,16.5px); line-height: 1.72; color: var(--ink-soft); }
+.j-goal { margin-top: 16px; background: rgba(var(--sage-rgb),.24); border: 1px solid rgba(var(--pine-rgb),.16); border-radius: 14px; padding: 15px 18px; }
+.j-goal .g-label { display: block; font-weight: 800; color: var(--pine-deep); font-size: 14.5px; margin-bottom: 6px; }
+.j-goal p { font-size: 15px; line-height: 1.68; color: var(--ink-soft); margin: 0; }
+.j-goal ul { margin: 0; padding-right: 20px; }
+.j-goal li { font-size: 15px; line-height: 1.68; color: var(--ink-soft); margin-bottom: 4px; }
+/* ===== סיפור: תת-כותרת + פער + "יש פחד" ===== */
+.story h3.sub { font-weight: 900; font-size: clamp(22px,2.7vw,31px); color: var(--ink); margin: 40px 0 18px; }
+.gap-block { display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center; margin: 34px 0; padding: 26px 24px; background: #fff; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 8px 24px rgba(30,43,37,.05); font-size: clamp(16.5px,1.9vw,20px); line-height: 1.6; color: var(--ink-soft); }
+.gap-block strong { color: var(--ink); font-weight: 800; }
+.gap-vs { font-size: 12px; letter-spacing: .2em; font-weight: 700; color: var(--pine); }
+.fear-lead { font-weight: 900; font-size: clamp(24px,3vw,34px); color: var(--red); margin: 38px 0 16px; }
+/* ===== פס 3 המספרים (מה כולל הקורס) ===== */
+.mini-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 0 0 44px; }
+.ms-item { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 26px 14px; text-align: center; box-shadow: 0 6px 18px rgba(30,43,37,.05); transition: all .3s; }
+.ms-item:hover { border-color: rgba(var(--pine-rgb),.4); transform: translateY(-3px); }
+.ms-num { font-weight: 900; font-size: clamp(38px,4.8vw,54px); line-height: 1; color: var(--pine-deep); }
+.ms-suffix { font-size: .45em; font-weight: 500; color: var(--pine); vertical-align: super; }
+.ms-label { color: var(--ink-soft); font-size: 14px; margin-top: 8px; letter-spacing: .02em; }
 
 /* ===== OUTCOMES ===== */
 .does-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
@@ -347,17 +370,23 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 
 <!-- ===== NAV (בלי מחיר) ===== -->
 <nav>
- <div class="nav-left"><span class="brand-mark">RichLife</span><div class="nav-divider"></div><span class="nav-sub">קורס דיגיטלי</span></div>
+ <div class="nav-left"><span class="brand-mark">מאת טלי שרעבי</span><div class="nav-divider"></div><span class="nav-sub">קורס דיגיטלי</span></div>
  <div class="nav-center"><div class="pill pill-pine"><span class="live-dot"></span>גישה מיידית</div><div class="pill pill-plain">בקצב שלך, מכל מכשיר</div></div>
  <a href="#join" class="nav-cta">אני רוצה להתחיל</a>
 </nav>
 
 <!-- ===== HERO (בלי מחיר) ===== -->
 <section class="hero">
+ <div style="width:100%">
+ <div class="hero-hook">
+  <div class="hero-hook-inner">
+   אם כבר חודשים את אומרת לעצמך
+   <span class="hh-quote">"אני חייבת להתחיל להשקיע"</span>
+   <span class="hh-tail">אבל עדיין לא עשית את זה...</span>
+  </div>
+ </div>
  <div class="hero-grid">
   <div class="hero-copy">
-   <div class="pre-head"><span class="pre-dot"></span>אם כבר חודשים את אומרת לעצמך "אני חייבת להתחיל להשקיע"</div>
-
    <h1 class="hero-h1">
     עוד שעה מעכשיו, <span class="h1-warm">תדעי בדיוק איך לעשות את ההשקעה הראשונה שלך.</span>
    </h1>
@@ -381,6 +410,7 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
    <div class="hero-badge">🎓 קורס דיגיטלי · בקצב שלך</div>
   </div>
  </div>
+ </div>
 </section>
 
 <!-- ===== STORY / PROBLEM ===== -->
@@ -388,22 +418,31 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
  <div class="section-label">// מה עוצר אותך</div>
  <h2>את יודעת שזה חשוב. אבל משהו <span class="gold">עוצר אותך.</span></h2>
 
- <p>כבר הבנת ש<strong>להשאיר את הכסף בעו"ש זה לא נכון</strong>. את מרגישה את המחירים עולים, <em>שהמשכורת לא באותו קצב</em>, ומתחילה לחשוב על לשים את הכסף שיעבוד.</p>
- <p>אבל פתאום זה מרגיש ש<strong>כולם מסביבך כבר מבינים</strong>. אחת מספרת על קרן שהשקיעה בה, חברה מדברת על S&amp;P, ומישהו בכלל טוען שקריפטו זה העתיד. ואת? זה מרגיש לך <em>גדול עלייך</em>, כאילו זה עולם שלם שלא ברור מאיפה בכלל נכנסים אליו.</p>
- <p>ואולי כבר תפסת אומץ וניסית להבין. הבעיה היא ש<strong>יצאת יותר מבולבלת</strong> מרוב השמות והמושגים המפחידים, ובאיזשהו שלב המוח פשוט אומר "עזבי, אחר כך". ואז עובר עוד חודש. ועוד חודש. <span class="neg">והכסף עדיין באותו מקום.</span></p>
+ <p>כבר הבנת ש<strong>להשאיר את הכסף בעובר ושב זה לא נכון</strong>,<br>את מרגישה את המחירים עולים,<br><em>שהמשכורת לא באותו הקצב</em>.</p>
+ <p>את מתחילה לחשוב על לשים את הכסף שיעבוד,<br>מתחילה לגשש קצת כדי להבין מה הלו"ז,<br>וזה מרגיש לך פתאום ש<strong>כולם מסביבך כבר מבינים בהשקעות</strong>.</p>
+ <p>אחת מספרת על קרן שהשקיעה בה,<br>חברה אחרת מדברת על S&amp;P,<br>ומישהו בכלל טוען שקריפטו זה העתיד.</p>
+ <p>אבל את?<br>זה מרגיש לך <em>גדול עלייך</em>.<br>כאילו זה עולם שלם שאת לא יודעת מאיפה בכלל נכנסים אליו,<br>אז את קצת נרתעת, ואולי אפילו לא מתקרבת.</p>
+ <p>ויכול להיות שכבר תפסת אומץ וניסית להבין מה לעשות.<br>הבעיה היא ש<strong>יצאת יותר מבולבלת</strong> מרוב כל השמות והמושגים המפחידים,<br>ובאיזשהו שלב המוח פשוט אומר:<br>"עזבי, אני אגיע לזה אחר כך".</p>
+ <p>ואז עובר עוד חודש.<br>ועוד חודש.<br><span class="neg">והכסף עדיין באותו מקום.</span></p>
 
+ <h3 class="sub">והכי מתסכל?</h3>
+ <p>את יודעת שזה חשוב. את שומעת מסביבך שצריך להשקיע. אבל <strong>אף אחד לא עצר רגע והסביר לך את זה בצורה פשוטה</strong>, רגועה, בגובה העיניים, בלי לגרום לך להרגיש שאת אמורה לדעת משהו שאף פעם לא לימדו אותך.</p>
+
+ <div class="gap-block">
+  <div>וחוץ מזה, את מבינה שיש פער בין</div>
+  <div><strong>לדעת שזה חשוב 🧠</strong></div>
+  <div class="gap-vs">לבין</div>
+  <div><strong>באמת ללחוץ על הכפתור ולעשות את ההשקעה הראשונה 💸</strong></div>
+ </div>
+
+ <div class="fear-lead">יש פחד.</div>
  <ul class="story-list">
   <li class="fadeup-ready" style="--delay:0s"><span class="li-icon">😰</span><span>פחד להפסיד כסף.</span></li>
   <li class="fadeup-ready" style="--delay:.08s"><span class="li-icon">🤔</span><span>פחד לבחור משהו לא נכון.</span></li>
-  <li class="fadeup-ready" style="--delay:.16s"><span class="li-icon">🙈</span><span>פחד להרגיש טיפשה מול מושגים שלא מכירים.</span></li>
-  <li class="fadeup-ready" style="--delay:.24s"><span class="li-icon">🧊</span><span>פחד להתחיל, ואז לא לדעת מה עושים הלאה.</span></li>
-  <li class="fadeup-ready" style="--delay:.32s"><span class="li-icon">⏳</span><span>ובינתיים, הכסף פשוט יושב ולא עובד.</span></li>
+  <li class="fadeup-ready" style="--delay:.16s"><span class="li-icon">😖</span><span>פחד לגלות שעשית טעות.</span></li>
+  <li class="fadeup-ready" style="--delay:.24s"><span class="li-icon">🙈</span><span>פחד להרגיש טיפשה מול מושגים שאת לא מכירה.</span></li>
+  <li class="fadeup-ready" style="--delay:.32s"><span class="li-icon">🧊</span><span>ופחד להתחיל, ואז לא לדעת מה לעשות אחר כך.</span></li>
  </ul>
-
- <div class="quote-block">
-  <div class="quote-text">"עזבי, אני אגיע לזה אחר כך."</div>
-  <div class="quote-attr">מה שהמוח אומר, בכל פעם מחדש</div>
- </div>
 </section>
 
 <!-- ===== חץ הזמנה ===== -->
@@ -434,8 +473,15 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
    <div class="j-node">1</div>
    <div class="j-card">
     <span class="j-emoji">💡</span><span class="j-tag">שלב 1</span>
-    <div class="j-h3">מה זו בכלל השקעה, ולמה להתחיל</div>
-    <div class="j-text">עושים סדר במושגים, מבינות למה כסף בעו"ש לא עובד בשבילך, ולמה להתחיל מוקדם חשוב הרבה יותר מלהתחיל מושלם.</div>
+    <div class="j-h3">תביני מה זו בכלל השקעה ולמה חשוב להתחיל</div>
+    <div class="j-text">לפני שנדבר על איפה משקיעים ואיך מתחילים, נעשה סדר במושגים, נבין למה כסף שיושב בעו"ש לא עובד בשבילך, ומה המחיר של לדחות את ההחלטה.</div>
+    <div class="j-goal"><span class="g-label">המטרה היא שתביני:</span>
+     <ul>
+      <li>את הבסיס בצורה פשוטה</li>
+      <li>למה להתחיל מוקדם חשוב הרבה יותר מלהתחיל מושלם</li>
+      <li>למה גם סכומים קטנים יכולים להיות הצעד הראשון שלך לעתיד כלכלי טוב יותר</li>
+     </ul>
+    </div>
    </div>
   </div>
 
@@ -443,8 +489,11 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
    <div class="j-node">2</div>
    <div class="j-card">
     <span class="j-emoji">🗺️</span><span class="j-tag">שלב 2</span>
-    <div class="j-h3">אילו אפשרויות מתאימות למתחילות</div>
-    <div class="j-text">מכירות את האפשרויות הקיימות, היתרונות והחסרונות של כל אחת, ובמה בכלל לא נוגעות בשלב הזה. סוף להצפה.</div>
+    <div class="j-h3">מכירות את אפשרויות ההשקעה שמתאימות למתחילות</div>
+    <div class="j-text">נבין אילו אפשרויות קיימות, מה היתרונות והחסרונות של כל אחת, ובמה אנחנו בכלל לא נוגעות בשלב הזה.</div>
+    <div class="j-goal"><span class="g-label">המטרה היא ש:</span>
+     <p>תפסיקי להרגיש מוצפת מכל האפשרויות, ותביני מה רלוונטי למי שרק מתחילה.</p>
+    </div>
    </div>
   </div>
 
@@ -452,8 +501,11 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
    <div class="j-node">3</div>
    <div class="j-card">
     <span class="j-emoji">🎯</span><span class="j-tag">שלב 3</span>
-    <div class="j-h3">כמה להשקיע ולכמה זמן</div>
-    <div class="j-text">איך לחשוב על הסכום, להגדיר מטרה, ולקבל החלטה שמרגישה נכונה גם מבחינה כלכלית וגם מבחינה רגשית.</div>
+    <div class="j-h3">מחליטות כמה להשקיע ולכמה זמן</div>
+    <div class="j-text">נבין איך לחשוב על הסכום, איך להגדיר מטרה, ואיך לקבל החלטה שמרגישה נכונה גם מבחינה כלכלית וגם מבחינה רגשית.</div>
+    <div class="j-goal"><span class="g-label">המטרה היא:</span>
+     <p>שתפסיקי לנחש, ותדעי מה הסכום שמתאים לך להתחיל איתו, ומהו טווח הזמן הנכון עבורך בהתאם למטרות שלך.</p>
+    </div>
    </div>
   </div>
 
@@ -461,8 +513,11 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
    <div class="j-node">4</div>
    <div class="j-card">
     <span class="j-emoji">🚀</span><span class="j-tag">שלב 4</span>
-    <div class="j-h3">מבצעות את ההשקעה הראשונה</div>
-    <div class="j-text">השלב שבו מפסיקים ללמוד ומתחילים לעשות. אני אראה לך בצורה פשוטה וברורה איך לבצע את ההשקעה הראשונה, שלב אחר שלב.</div>
+    <div class="j-h3">מבצעות את ההשקעה הראשונה שלך צעד אחר צעד</div>
+    <div class="j-text">זה השלב שבו מפסיקים רק ללמוד ומתחילים לעשות. אני אראה לך בצורה פשוטה וברורה איך לבצע את ההשקעה הראשונה שלך, שלב אחר שלב.</div>
+    <div class="j-goal"><span class="g-label">המטרה היא ש:</span>
+     <p>תצאי מהשלב הזה לא רק עם ידע, אלא עם השקעה שביצעת בפועל, מתוך הבנה וביטחון, בלי להרגיש שאת מהמרת על הכסף שלך.</p>
+    </div>
    </div>
   </div>
 
@@ -470,8 +525,11 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
    <div class="j-node">5</div>
    <div class="j-card">
     <span class="j-emoji">🌱</span><span class="j-tag">שלב 5</span>
-    <div class="j-h3">היום שאחרי ההשקעה</div>
-    <div class="j-text">מה עושים כשהשוק יורד? איך ממשיכים ברוגע ובביטחון, בלי החלטות שמתקבלות מתוך פחד או חוסר סבלנות.</div>
+    <div class="j-h3">מה עושים ביום שאחרי ההשקעה?</div>
+    <div class="j-text">הרבה אנשים מצליחים לעשות את ההשקעה הראשונה. האתגר האמיתי מתחיל אחר כך. מה עושים כשהשוק יורד? מה עושים כשהתקשורת מפחידה? איך יודעים אם להמשיך, לעצור או לשנות משהו? נדבר על הטעויות הנפוצות שאנשים עושים אחרי שהם מתחילים להשקיע, ואיך להימנע מהחלטות שמתקבלות מתוך לחץ, פחד או חוסר סבלנות.</div>
+    <div class="j-goal"><span class="g-label">המטרה היא ש:</span>
+     <p>תדעי איך להמשיך בדרך בצורה רגועה ובטוחה, בלי שכל שינוי קטן יגרום לך לפקפק בהחלטה שקיבלת.</p>
+    </div>
    </div>
   </div>
  </div>
@@ -488,32 +546,27 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
    <div class="does-card fadeup-ready" style="--delay:0s">
     <div class="does-emoji">✅</div>
     <div class="does-h3">סוף סוף תעשי את זה</div>
-    <div class="does-text">אחרי כל הדחיות, ההתלבטויות והחשש לטעות, יש לך השקעה שביצעת בפועל.</div>
+    <div class="does-text">אחרי חודשים ואולי אפילו שנים של דחיות, התלבטויות וחשש לטעות - יש לך השקעה שביצעת.</div>
    </div>
    <div class="does-card fadeup-ready" style="--delay:.08s">
     <div class="does-emoji">📈</div>
-    <div class="does-h3">תראי איך הכסף עובד</div>
-    <div class="does-text">בפעם הראשונה תראי בעיניים איך השקעה נועדה לצמוח לאורך זמן, במקום לשבת בעו"ש.</div>
+    <div class="does-h3">תראי איך כסף מתחיל לעבוד בשבילך</div>
+    <div class="does-text">בפעם הראשונה תראי בעיניים איך השקעה נועדה לייצר צמיחה לאורך זמן, במקום שהכסף פשוט ישב בעו"ש.</div>
    </div>
    <div class="does-card fadeup-ready" style="--delay:.16s">
     <div class="does-emoji">🧩</div>
-    <div class="does-h3">מושגים שהיו כמו סינית</div>
-    <div class="does-text">מה שפעם נשמע מפחיד יתחיל להיות הרבה יותר ברור ופשוט להבנה.</div>
+    <div class="does-h3">מושגים שפעם נשמעו כמו סינית יתחילו להיות ברורים</div>
+    <div class="does-text">את כבר לא מפחדת או נרתעת, מושגים שפעם נשמעו כמו סינית יתחילו להיות הרבה יותר ברורים ופשוטים להבנה.</div>
    </div>
    <div class="does-card fadeup-ready" style="--delay:0s">
     <div class="does-emoji">🛡️</div>
-    <div class="does-h3">ביטחון בהחלטות</div>
-    <div class="does-text">במקום להרגיש שאת מנחשת או מהמרת, תביני את השיקולים מאחורי כל החלטה שלך.</div>
+    <div class="does-h3">תקבלי ביטחון לקבל החלטות כלכליות</div>
+    <div class="does-text">במקום להרגיש שאת מנחשת או מהמרת, תביני את השיקולים מאחורי ההחלטות שלך.</div>
    </div>
    <div class="does-card fadeup-ready" style="--delay:.08s">
     <div class="does-emoji">🚀</div>
-    <div class="does-h3">תיאבון לצמיחה</div>
-    <div class="does-text">ברגע שעושים את הצעד הראשון, נפתח התיאבון ללמוד עוד ולקבל החלטות טובות יותר.</div>
-   </div>
-   <div class="does-card fadeup-ready" style="--delay:.16s">
-    <div class="does-emoji">🌱</div>
-    <div class="does-h3">התחלה שממשיכה איתך</div>
-    <div class="does-text">הצעד הראשון הזה הוא לא הסוף, הוא הבסיס לכל החלטה כלכלית טובה שתבוא אחריו.</div>
+    <div class="does-h3">תפתחי תיאבון לצמיחה כלכלית</div>
+    <div class="does-text">ברגע שעושים את הצעד הראשון, הרבה פעמים נפתח התיאבון ללמוד עוד, להתייעל כלכלית ולקבל החלטות טובות יותר גם בתחומים נוספים.</div>
    </div>
   </div>
 
@@ -586,6 +639,12 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
   <div class="light-eyebrow">// מה כולל הקורס</div>
   <h2 class="light-h2">הכל פשוט, <span class="orange">בקצב שלך.</span></h2>
 
+  <div class="mini-stats">
+   <div class="ms-item"><div class="ms-num" data-target="5"><span class="ms-countup">5</span></div><div class="ms-label">שלבים ברורים</div></div>
+   <div class="ms-item"><div class="ms-num" data-target="3"><span class="ms-countup">3</span></div><div class="ms-label">בונוסים במתנה</div></div>
+   <div class="ms-item"><div class="ms-num" data-target="10"><span class="ms-countup">10</span><span class="ms-suffix"> דק'</span></div><div class="ms-label">אורך כל שיעור, בקצר</div></div>
+  </div>
+
   <div class="mockup-wrap fadeup-ready">
    <img src="images/course-mockup.png" alt="הקורס והבונוסים על מחשב, טאבלט ונייד" loading="lazy">
   </div>
@@ -641,7 +700,7 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
   <p class="offer-lead">המטרה שלי היא להנגיש את הידע הזה בצורה הכי פשוטה ולא מאיימת שיש. לכן ההשקעה שלך בקורס היא <strong>פחות מארוחה בוולט, פחות מחולצה בזארה</strong>. אבל בניגוד אליהן, הפעם את קונה לעצמך הזדמנות לעשות את הצעד הראשון לעולם ההשקעות.</p>
 
   <div class="offer-card">
-   <div class="price-row"><span class="price-num">97 ₪</span></div>
+   <div class="price-row"><span class="price-num">119 ₪</span></div>
    <div class="price-note">תשלום חד פעמי · גישה מיידית · לכל החיים</div>
 
    <!-- טופס אמיתי: נשלח לרב מסר (רשימת מתעניינות 94567) → רב מסר מעביר לעמוד התשלום של Grow (passthrough).
@@ -885,6 +944,37 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
  window.addEventListener('scroll', upd, { passive: true });
  window.addEventListener('resize', upd);
  upd();
+})();
+
+/* ===== 4.5 COUNT-UP על פס המספרים (מה כולל הקורס) ===== */
+(function initCountUp() {
+ const wrap = document.querySelector('.mini-stats');
+ if (!wrap || !('IntersectionObserver' in window)) return;
+ let triggered = false;
+ function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+ function animateCount(el, target, duration) {
+  let start = null;
+  function step(ts) {
+   if (!start) start = ts;
+   const p = Math.min((ts - start) / duration, 1);
+   el.textContent = Math.round(easeOutCubic(p) * target);
+   if (p < 1) requestAnimationFrame(step); else el.textContent = target;
+  }
+  requestAnimationFrame(step);
+ }
+ const obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+   if (entry.isIntersecting && !triggered) {
+    triggered = true; obs.disconnect();
+    wrap.querySelectorAll('.ms-num').forEach(function(numEl) {
+     const target = parseInt(numEl.getAttribute('data-target'), 10);
+     const countEl = numEl.querySelector('.ms-countup');
+     if (countEl && !isNaN(target)) animateCount(countEl, target, 1300);
+    });
+   }
+  });
+ }, { threshold: 0.3 });
+ obs.observe(wrap);
 })();
 
 /* ===== 5. FADEUP STAGGER ===== */
