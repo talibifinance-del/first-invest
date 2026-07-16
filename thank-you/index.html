@@ -174,49 +174,6 @@ h1 { font-weight: 900; font-size: clamp(30px,5.5vw,44px); line-height: 1.2; colo
  addEventListener('load', () => setTimeout(celebration, 350));
 })();
 
-/* מחיאות כפיים - מסונתזות ב-WebAudio, בלי קובץ. דפדפנים חוסמים קול אוטומטי,
-   אז מנסים מיד, ואם נחסם - מנגנים בנגיעה/קליק ראשון יחד עם עוד קונפטי. */
-(function(){
- let played = false;
- function clap(ctx, t, vol){
-  const dur = .03 + Math.random() * .03;
-  const buf = ctx.createBuffer(1, ctx.sampleRate * dur, ctx.sampleRate);
-  const d = buf.getChannelData(0);
-  for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 2);
-  const src = ctx.createBufferSource(); src.buffer = buf;
-  const bp = ctx.createBiquadFilter(); bp.type = 'bandpass';
-  bp.frequency.value = 900 + Math.random() * 2600; bp.Q.value = .9;
-  const g = ctx.createGain(); g.gain.value = vol;
-  const pan = ctx.createStereoPanner ? ctx.createStereoPanner() : null;
-  if (pan) { pan.pan.value = Math.random() * 1.6 - .8; src.connect(bp).connect(g).connect(pan).connect(ctx.destination); }
-  else src.connect(bp).connect(g).connect(ctx.destination);
-  src.start(t);
- }
- function applause(){
-  if (played) return;
-  try {
-   const ctx = new (window.AudioContext || window.webkitAudioContext)();
-   if (ctx.state === 'suspended') { ctx.close(); return; }
-   played = true;
-   const t0 = ctx.currentTime + .05;
-   let n = 0;
-   for (let t = 0; t < 2.4; t += .02 + Math.random() * .05) {
-    const density = t < 1.2 ? 1 : (2.4 - t) / 1.2;   /* דועך לקראת הסוף */
-    if (Math.random() < density) clap(ctx, t0 + t, .12 + Math.random() * .18);
-    if (++n > 90) break;
-   }
-   setTimeout(() => ctx.close(), 4000);
-  } catch (e) {}
- }
- addEventListener('load', () => setTimeout(applause, 400));
- function onFirstTouch(){
-  if (!played) { applause(); if (window.__celebrate) window.__celebrate(); }
-  removeEventListener('pointerdown', onFirstTouch);
-  removeEventListener('keydown', onFirstTouch);
- }
- addEventListener('pointerdown', onFirstTouch);
- addEventListener('keydown', onFirstTouch);
-})();
 </script>
 
 </body>
