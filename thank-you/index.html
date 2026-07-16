@@ -124,5 +124,100 @@ h1 { font-weight: 900; font-size: clamp(30px,5.5vw,44px); line-height: 1.2; colo
  <div class="footer">טלי בנימינוב · RichLife · כל הזכויות שמורות</div>
 </div>
 
+<!-- ===== קונפטי מסיבה + מחיאות כפיים ===== -->
+<canvas id="party" style="position:fixed;inset:0;pointer-events:none;z-index:50;"></canvas>
+<script>
+/* קונפטי - ללא ספריות */
+(function(){
+ const cv = document.getElementById('party'), ctx = cv.getContext('2d');
+ let W, H, parts = [], running = false;
+ function size(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+ size(); addEventListener('resize', size);
+ const COLORS = ['#5f7d6a','#bcd3bf','#3e5448','#c1553f','#f2c94c','#ffffff','#8fb89b','#e8a87c'];
+ function burst(x, y, n, spread, power){
+  for (let i = 0; i < n; i++) {
+   const a = (Math.random() - .5) * spread - Math.PI / 2;
+   const v = power * (0.5 + Math.random());
+   parts.push({
+    x: x, y: y,
+    vx: Math.cos(a) * v, vy: Math.sin(a) * v,
+    w: 6 + Math.random() * 7, h: 8 + Math.random() * 9,
+    c: COLORS[(Math.random() * COLORS.length) | 0],
+    rot: Math.random() * Math.PI * 2, vr: (Math.random() - .5) * .3,
+    shape: Math.random() < .3 ? 'circle' : 'rect',
+    life: 1, decay: .004 + Math.random() * .005
+   });
+  }
+  if (!running) { running = true; requestAnimationFrame(tick); }
+ }
+ function tick(){
+  ctx.clearRect(0, 0, W, H);
+  parts = parts.filter(p => p.life > 0 && p.y < H + 40);
+  for (const p of parts) {
+   p.vy += .16; p.vx *= .992; p.vy *= .992;
+   p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.life -= p.decay;
+   ctx.save(); ctx.globalAlpha = Math.max(p.life, 0);
+   ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.fillStyle = p.c;
+   if (p.shape === 'circle') { ctx.beginPath(); ctx.arc(0, 0, p.w / 2, 0, 7); ctx.fill(); }
+   else ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+   ctx.restore();
+  }
+  if (parts.length) requestAnimationFrame(tick); else { running = false; ctx.clearRect(0, 0, W, H); }
+ }
+ function celebration(){
+  burst(W / 2, H * .45, 120, 2.4, 13);                       /* פיצוץ מרכזי */
+  setTimeout(() => burst(0, H * .7, 70, 1.1, 15), 250);       /* תותח שמאל */
+  setTimeout(() => burst(W, H * .7, 70, 1.1, 15), 450);       /* תותח ימין */
+  setTimeout(() => burst(W / 2, H * .3, 60, 2.6, 9), 900);    /* גשם עדין */
+ }
+ window.__celebrate = celebration;
+ addEventListener('load', () => setTimeout(celebration, 350));
+})();
+
+/* מחיאות כפיים - מסונתזות ב-WebAudio, בלי קובץ. דפדפנים חוסמים קול אוטומטי,
+   אז מנסים מיד, ואם נחסם - מנגנים בנגיעה/קליק ראשון יחד עם עוד קונפטי. */
+(function(){
+ let played = false;
+ function clap(ctx, t, vol){
+  const dur = .03 + Math.random() * .03;
+  const buf = ctx.createBuffer(1, ctx.sampleRate * dur, ctx.sampleRate);
+  const d = buf.getChannelData(0);
+  for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 2);
+  const src = ctx.createBufferSource(); src.buffer = buf;
+  const bp = ctx.createBiquadFilter(); bp.type = 'bandpass';
+  bp.frequency.value = 900 + Math.random() * 2600; bp.Q.value = .9;
+  const g = ctx.createGain(); g.gain.value = vol;
+  const pan = ctx.createStereoPanner ? ctx.createStereoPanner() : null;
+  if (pan) { pan.pan.value = Math.random() * 1.6 - .8; src.connect(bp).connect(g).connect(pan).connect(ctx.destination); }
+  else src.connect(bp).connect(g).connect(ctx.destination);
+  src.start(t);
+ }
+ function applause(){
+  if (played) return;
+  try {
+   const ctx = new (window.AudioContext || window.webkitAudioContext)();
+   if (ctx.state === 'suspended') { ctx.close(); return; }
+   played = true;
+   const t0 = ctx.currentTime + .05;
+   let n = 0;
+   for (let t = 0; t < 2.4; t += .02 + Math.random() * .05) {
+    const density = t < 1.2 ? 1 : (2.4 - t) / 1.2;   /* דועך לקראת הסוף */
+    if (Math.random() < density) clap(ctx, t0 + t, .12 + Math.random() * .18);
+    if (++n > 90) break;
+   }
+   setTimeout(() => ctx.close(), 4000);
+  } catch (e) {}
+ }
+ addEventListener('load', () => setTimeout(applause, 400));
+ function onFirstTouch(){
+  if (!played) { applause(); if (window.__celebrate) window.__celebrate(); }
+  removeEventListener('pointerdown', onFirstTouch);
+  removeEventListener('keydown', onFirstTouch);
+ }
+ addEventListener('pointerdown', onFirstTouch);
+ addEventListener('keydown', onFirstTouch);
+})();
+</script>
+
 </body>
 </html>
