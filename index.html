@@ -213,6 +213,14 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 .gap-block { display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center; margin: 34px 0; padding: 26px 24px; background: #fff; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 8px 24px rgba(30,43,37,.05); font-size: clamp(16.5px,1.9vw,20px); line-height: 1.6; color: var(--ink-soft); }
 .gap-block strong { color: var(--ink); font-weight: 800; }
 .gap-vs { font-size: 12px; letter-spacing: .2em; font-weight: 700; color: var(--pine); }
+.gap-hero { font-size: clamp(19px,2.7vw,27px); font-weight: 900; color: var(--pine-deep); background: linear-gradient(120deg, rgba(var(--sage-rgb),.5), rgba(var(--sage-rgb),.22)); border: 1px solid rgba(var(--pine-rgb),.25); border-radius: 16px; padding: 14px 26px; line-height: 1.5; animation: gap-pulse 2.8s ease-in-out infinite; box-shadow: 0 8px 24px rgba(var(--pine-rgb),.14); }
+@keyframes gap-pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.025)} }
+/* מ"אין לי מושג" ← ל"השקעתי" */
+.steps-chip { display: inline-block; padding: 3px 16px; border-radius: 100px; white-space: nowrap; }
+.chip-from { background: rgba(30,43,37,.08); color: var(--ink-soft); }
+.chip-to { background: linear-gradient(120deg, var(--pine-deep), var(--pine)); color: #fff; box-shadow: 0 8px 24px rgba(var(--pine-rgb),.4); }
+.arrow-anim { display: inline-block; margin: 0 12px; color: var(--pine); font-weight: 900; animation: arrow-slide 1.4s ease-in-out infinite; }
+@keyframes arrow-slide { 0%,100%{transform:translateX(0);opacity:.45} 50%{transform:translateX(-9px);opacity:1} }
 .fear-lead { font-weight: 900; font-size: clamp(24px,3vw,34px); color: var(--red); margin: 38px 0 16px; }
 /* ===== פס 3 המספרים (מה כולל הקורס) ===== */
 .mini-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 0 0 44px; }
@@ -458,7 +466,7 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
   <div>וחוץ מזה, את מבינה שיש פער בין</div>
   <div><strong>לדעת שזה חשוב 🧠</strong></div>
   <div class="gap-vs">לבין</div>
-  <div><strong>באמת ללחוץ על הכפתור ולעשות את ההשקעה הראשונה 💸</strong></div>
+  <div class="gap-hero">באמת ללחוץ על הכפתור ואשכרה לעשות את ההשקעה הראשונה 💸</div>
  </div>
 
  <div class="fear-lead">יש פחד.</div>
@@ -495,7 +503,7 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 <!-- ===== JOURNEY ===== -->
 <section class="how" id="how">
  <div class="section-label">// איך זה עובד</div>
- <h2>5 שלבים, מ"אין לי מושג" <span class="gold">ל"עשיתי".</span></h2>
+ <h2>5 שלבים, מ<span class="steps-chip chip-from">"אין לי מושג"</span><span class="arrow-anim">←</span>ל<span class="steps-chip chip-to">"השקעתי"</span></h2>
  <p class="how-intro">הקורס בנוי במודולים קצרים וברורים, שלוקחים אותך מהשלב של "אני יודעת שאני צריכה, אבל אין לי מושג איך", עד לביצוע ההשקעה הראשונה בפועל. ככל שגוללים - המסע נפתח.</p>
 
  <div class="journey" id="journey">
