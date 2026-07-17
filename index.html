@@ -112,7 +112,7 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 .hero-hook-inner .hh-quote { font-weight: 900; font-size: 1.12em; color: #fff; }
 .hero-hook-inner .hh-tail { display: block; color: rgba(238,244,239,.8); }
 @media (max-width: 880px) { .hero-hook-inner { border-radius: 20px; padding: 14px 20px; } }
-.sub-promise { font-size: clamp(17.5px,2.1vw,22px); font-weight: 500; line-height: 1.78; color: var(--ink); margin-bottom: 28px; min-height: 4.5em; }
+.sub-promise { font-size: clamp(17.5px,2.1vw,22px); font-weight: 500; line-height: 1.78; color: var(--ink); margin-bottom: 28px; min-height: 2.2em; }
 .sub-promise strong { color: var(--ink); font-weight: 700; }
 .sub-promise .warm { color: var(--pine-deep); font-weight: 700; }
 .tw-cursor { display: inline-block; width: 2px; background: var(--pine); animation: tw-blink .7s step-end infinite; margin-right: 2px; vertical-align: text-bottom; }
@@ -879,7 +879,7 @@ body { padding-bottom: 92px; }
 (function() {
  const el = document.getElementById('sub-promise-el');
  if (!el) return;
- const fullHTML = 'קורס דיגיטלי <span class="warm">קצר, פשוט וברור</span> שמראה לך <strong>צעד אחר צעד</strong> איך להתחיל להשקיע, בלי לפחד לשים כסף במקום הלא נכון, ובלי להרגיש שאת צריכה להיות מומחית. <span class="warm">כי זה באמת פשוט, כשמסבירים את זה נכון.</span>';
+ const fullHTML = 'קורס דיגיטלי <span class="warm">קצר, פשוט וברור</span>, <strong>צעד אחר צעד</strong>. <span class="warm">כי זה באמת פשוט, כשמסבירים את זה נכון.</span>';
 
  function tokenize(html) {
   const tokens = []; let i = 0;
