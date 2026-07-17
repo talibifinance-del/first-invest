@@ -94,7 +94,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 90; height: 66px; pad
 .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 32px rgba(var(--pine-rgb),.5); }
 
 /* ===== HERO ===== */
-.hero { position: relative; z-index: 1; padding: 140px 32px 40px; overflow: hidden; }
+.hero { position: relative; z-index: 1; padding: 58px 32px 40px; overflow: hidden; }
 .hero-grid { max-width: 880px; margin: 0 auto; position: relative; z-index: 3; }
 .hero-copy { text-align: center; }
 .hero-copy .cta-group { justify-content: center; }
@@ -112,7 +112,7 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 .hero-hook-inner .hh-quote { font-weight: 900; font-size: 1.12em; color: #fff; }
 .hero-hook-inner .hh-tail { display: block; color: rgba(238,244,239,.8); }
 @media (max-width: 880px) { .hero-hook-inner { border-radius: 20px; padding: 14px 20px; } }
-.sub-promise { font-size: clamp(17px,2vw,21px); font-weight: 400; line-height: 1.75; color: var(--ink-soft); margin-bottom: 28px; min-height: 4.5em; }
+.sub-promise { font-size: clamp(17.5px,2.1vw,22px); font-weight: 500; line-height: 1.78; color: var(--ink); margin-bottom: 28px; min-height: 4.5em; }
 .sub-promise strong { color: var(--ink); font-weight: 700; }
 .sub-promise .warm { color: var(--pine-deep); font-weight: 700; }
 .tw-cursor { display: inline-block; width: 2px; background: var(--pine); animation: tw-blink .7s step-end infinite; margin-right: 2px; vertical-align: text-bottom; }
@@ -376,14 +376,16 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 .fadeup-ready.fadeup-done { animation: fadeup-in .6s cubic-bezier(.22,.68,0,1.2) both; }
 @keyframes fadeup-in { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 
-.sticky-cta { display: none; }
+/* הכפתור הקבוע - צף למטה בכל המכשירים (הכפתור היחיד עד סקשן המחיר) */
+.sticky-cta { position: fixed; bottom: 16px; left: 0; right: 0; z-index: 95; padding: 0 16px; text-align: center; pointer-events: none; }
+.sticky-cta a { pointer-events: auto; display: inline-block; width: min(420px, 100%); text-align: center; background: linear-gradient(120deg, var(--pine-deep), var(--pine)); color: #fff; font-weight: 800; font-size: 16.5px; padding: 17px 24px; border-radius: 100px; text-decoration: none; box-shadow: 0 14px 40px rgba(47,64,54,.45), inset 0 1px 0 rgba(255,255,255,.2); position: relative; overflow: hidden; transition: transform .2s, box-shadow .25s; }
+.sticky-cta a::after { content: ''; position: absolute; top: 0; bottom: 0; left: -50%; width: 35%; background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.3) 50%, transparent 100%); transform: skewX(-22deg); animation: shimmer-sweep 3.6s ease-in-out infinite; }
+.sticky-cta a:hover { transform: translateY(-2px); box-shadow: 0 18px 50px rgba(47,64,54,.55); }
+body { padding-bottom: 92px; }
 
 /* ===== מובייל ===== */
 @media (max-width: 880px) {
- nav { padding: 0 20px; }
- .nav-center { display: none; }
- .nav-sub { display: none; }
- .hero { padding-top: 116px; }
+ .hero { padding-top: 42px; }
  .hero-visual { max-width: 400px; margin-top: 36px; width: 100%; }
  .bli-chips { gap: 6px; }
  .bli-chip { padding: 8px 12px; font-size: 12px; gap: 6px; }
@@ -399,9 +401,7 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
  .j-node { right: -48px; width: 38px; height: 38px; font-size: 13px; }
  .offer-card { padding: 32px 22px; }
  .sc-out, .sc-in { padding: 16px 30px 16px 18px; font-size: 14px; }
- .sticky-cta { display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 95; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(238,244,239,.95); backdrop-filter: blur(20px); border-top: 1px solid var(--line); }
- .sticky-cta a { display: block; text-align: center; background: linear-gradient(120deg, var(--pine-deep), var(--pine)); color: #fff; font-weight: 800; font-size: 16px; padding: 16px; border-radius: 12px; text-decoration: none; box-shadow: 0 6px 22px rgba(var(--pine-rgb),.35); }
- body { padding-bottom: 76px; }
+ .sticky-cta { bottom: calc(10px + env(safe-area-inset-bottom)); }
 }
 </style>
 </head>
@@ -417,14 +417,7 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
  <div class="scene-grid"></div>
 </div>
 
-<!-- ===== NAV (בלי מחיר) ===== -->
-<nav>
- <div class="nav-left"><span class="brand-mark">RichLife <span class="brand-by">מאת טלי שרעבי</span></span><div class="nav-divider"></div><span class="nav-sub">קורס דיגיטלי</span></div>
- <div class="nav-center"><div class="pill pill-pine"><span class="live-dot"></span>גישה מיידית</div><div class="pill pill-plain">בקצב שלך, מכל מכשיר</div></div>
- <a href="#join" class="nav-cta">אני רוצה להתחיל</a>
-</nav>
-
-<!-- ===== HERO (בלי מחיר) ===== -->
+<!-- ===== HERO (בלי מחיר, בלי סרגל עליון - הוסר לבקשת טלי 17.7) ===== -->
 <section class="hero">
  <div style="width:100%">
  <div class="hero-hook">
@@ -446,11 +439,6 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
    </div>
 
    <p class="sub-promise" id="sub-promise-el"></p>
-
-   <div class="cta-group">
-    <a href="#join" class="cta-primary">אני רוצה להתחיל להשקיע</a>
-    <a href="#story-section" class="cta-secondary">ספרו לי עוד ↓</a>
-   </div>
 
    <div class="hero-visual">
     <div class="hero-img-card"><img src="images/hero-cover.jpg" alt="להשקיע לראשונה בקלות - טלי בנימינוב"></div>
@@ -891,7 +879,7 @@ h1.hero-h1 { font-weight: 900; font-size: clamp(30px, 3.5vw, 48px); line-height:
 (function() {
  const el = document.getElementById('sub-promise-el');
  if (!el) return;
- const fullHTML = 'קורס דיגיטלי קצר ופשוט שמראה לך <strong>צעד אחר צעד איך להתחיל להשקיע</strong>, בלי לפחד לשים כסף במקום הלא נכון, ו<span class="warm">בלי להרגיש שאת צריכה להיות מומחית</span>.';
+ const fullHTML = 'קורס דיגיטלי <span class="warm">קצר, פשוט וברור</span> שמראה לך <strong>צעד אחר צעד</strong> איך להתחיל להשקיע, בלי לפחד לשים כסף במקום הלא נכון, ובלי להרגיש שאת צריכה להיות מומחית. <span class="warm">כי זה באמת פשוט, כשמסבירים את זה נכון.</span>';
 
  function tokenize(html) {
   const tokens = []; let i = 0;
